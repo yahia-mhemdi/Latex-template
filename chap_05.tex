@@ -1,0 +1,422 @@
+\chapter{Release 3: Gestion d'achat et dépenses}
+
+
+% Une section
+
+% Exemple d'une section qui porte une référence à une bibliographie
+% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas où il y a une référence dans la table des matières.
+
+\section*{Introduction}
+
+Dans ce chapitre, nous allons présenter la réalisation du Sprint 5 "Gestion des achats et des dépenses", et sprint 6 "Réalisation du Dashboard". Nous allons commencer par l’identification des objectifs du Sprint, le backlog du sprint, la spécification des besoins et la réalisation.
+
+\section{Sprint 5:Module gestion d'achats et Dépenses}
+    
+    Dans cette section nous allons présenter les différents étapes de la réalisation du sprint "Gestion d'achats et Dépenses".
+
+    \subsection{Objectifs du sprint 5}
+    
+        L’objectif du cinquième sprint est de développer le module « Gestion d'achats et Dépenses » permettant aux employés d’enregistrer une demande d’achat et au manager de répondre à ces demandes et de gérer les fournisseurs ainsi que les dépenses périodiques de son entreprise.
+
+    \subsection{Backlog du sprint 5}
+    
+            \begin{longtable}{|m{1cm}|m{9cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant qu'employé je veux passer une demande d'achat
+                    & 1
+                    & 2\\
+            
+                \hline
+                    2
+                    & En tant qu'employé je veux gérer ma demande d'achat 
+                    & 2
+                    & 2\\
+            
+                \hline
+                    3
+                    & En tant qu'employé je paux gérer ajouter un fournisseur si afin de pouvoir passer une demande d'achat si ce fournisseur n'existe pas dans la liste des fournisseurs
+                    & 3
+                    & 2\\
+                    
+                    
+                \hline
+                    4
+                    & En tant que manager je veux consulter la liste des achats
+                    & 4
+                    & 1\\
+                
+                \hline  
+                    5 
+                    & En tant que manager je veux répondre aux demandes d'achats
+                    & 5
+                    & 1\\
+            
+                \hline
+                    6
+                    & En tant que manager je veux gérer les dépenses périodique de mon entreprise
+                    & 6
+                    & 3\\
+                    
+                \hline
+                    7
+                    & En tant que manager je veux gérér les fournisseurs 
+                    & 3
+                    & 2\\
+                    
+
+                \hline
+            
+                 
+              \captionsetup{justification=centering,margin=2cm}
+              \caption{Backlog du Sprint 5}
+
+            \end{longtable}
+    
+    \subsection{Spécification des besoins fonctionnels}
+    
+        La figure \ref{fig:UCsp5} représente le diagramme de cas d'utilisation du sprint "Gestion d'achats et dépenses".
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCGestionAchat.png}
+        \caption{Diagramme de cas d'utilisation "Gestion d'achats et dépenses"}
+        \label{fig:UCsp5}
+        \end{figure}
+    
+    \subsection{Diagramme de classe}
+    
+        La figure \ref{fig:CDsp5} représente le diagramme de classe du sprint "Gestion d'achats et dépenses".
+        
+        \begin{itemize}
+            \item Un utilisateur peut passer une ou plusieurs commandes. Une commande est caractérisée par (id commande, date) et peut contenir plusieurs produits.
+
+            \item Un produit est caractérisé par (id produit, nom produit, description, lien, prix).
+
+            \item Un fournisseur est caractérisé par (id fournisseur, nom, téléphone, adresse, email, site web) et peut avoir un ou plusieurs produits.
+
+            \item Une dépense périodique est caractérisé par (id dépense, nom, note, période) et elle appartient à une seule entreprise.
+        \end{itemize}       
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionAchat.PNG}}
+        \caption{Diagramme de classe "Gestion d'achats et dépenses"}
+        \label{fig:CDsp5}
+        \end{figure}   
+    
+    \subsection{Diagrammes dynamiques}
+    Dans cette section nous allons présenter le diagramme de séquence système "traiter une demande d'achat"
+        \subsubsection{Diagramme de séquence système "traiter une demande d'achat"}
+            
+            La figure \ref{fig:SSsp3} représente le diagramme de séquence système de la procédure de traitement d'une demande d'achat qui nous montre les interactions entre l'employé et le manager avec le système afin de traiter une demande d'achat.
+            
+            
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/SSpurchase.png}}
+            \caption{Diagramme de séquence système "traiter une demande d'achat"}
+            \label{fig:SSsp3}
+            \end{figure} 
+    
+    \subsection{Réalisation}
+    
+        Pour la réalisation du sprint "Gestion d'achats et dépenses" nous allons nous connecter avec le compte de  "Mohamed"  qui possède le rôle Manager car seul le manager peut gérer les fournisseurs dépenses périodiques et les demandes d'achats.
+        
+        La figure \ref{fig:cap1sp5} représente le formulaire d'ajout d'un fournisseur.
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture1.PNG}}
+        \caption{Formulaire d'ajout de fournisseur}
+        \label{fig:cap1sp5}
+        \end{figure} 
+
+        La figure \ref{fig:cap3sp5} représente le formulaire d'ajout d'une dépense périodique.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture3 addPeriodicDepense.PNG}}
+        \caption{Formulaire d'ajout d'une dépense périodique}
+        \label{fig:cap3sp5}
+        \end{figure} 
+        
+        La figure \ref{fig:cap4sp5} nous montre La nouvelle liste des dépenses périodiques après l'ajout de l'allocation du bureau.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture4 depenseAdded.png}}
+        \caption{La nouvelle liste des dépenses périodiques}
+        \label{fig:cap4sp5}
+        \end{figure} 
+        
+        Maintenant on va passer une demande d'achat et cette fois-ci nous avons choisi de nous connecter avec le compte de "Ali" le responsable Rh.
+        
+        La figure \ref{fig:cap5sp5} nous montre la page des achats et dépenses avec le compte de "Ali" et comme vous voyez seul l'onglet d'achat est visible pour cet utilisateur.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture5 Rh Achat.png}}
+        \caption{Interface demande d'achat}
+        \label{fig:cap5sp5}
+        \end{figure} 
+        
+        Les deux prochaines captures vont nous montrer l'utilisateur "Ali" qui va réaliser une demande d'achat.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture6 Rh purchaseDemand.png}}
+        \caption{Passer une demande d'achat}
+        \label{fig:cap6sp5}
+        \end{figure} 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture7 Rh purchaseDemand added.png}}
+        \caption{la nouvelle liste des demandes d'achats}
+        \label{fig:cap7sp5}
+        \end{figure} 
+        
+        Nous reconnectons maintenant avec le compte de  "Mohamed"  et on visite l'onglet "Approbation en attente". Et voilà on trouve la demande d'achat passée par "Ali" comme nous montre la figure \ref{fig:cap8sp5}.
+        
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture8 Approbation en attente.png}}
+        \caption{interface approbation en attente}
+        \label{fig:cap8sp5}
+        \end{figure} 
+        
+        La figure \ref{fig:cap9sp5} représente la liste des demandes en attentes après que  "Mohamed"  a accepté la demande.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp5Capture9 PurchaseAccepted.png}}
+        \caption{Demande d'achat acceptée}
+        \label{fig:cap9sp5}
+        \end{figure} 
+        
+    
+    
+    
+\section{sprint 6:Réalisation du dashboard} 
+
+Dans cette section nous allons présenter les différents étapes de la réalisation du Dashboard.
+
+    \subsection{Objectifs du sprint 6}
+    
+        L’objectif du sixième sprint est de réaliser le dashboard de l'application.
+      
+    \subsection{Backlog du sprint 6}
+            \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant qu'utilisateur je veux consulter la liste des anniversaire de mes collègues pour ce mois.
+                    & 2
+                    & 1\\
+            
+                \hline
+                    2
+                    & En tant qu'utilisateur je veux consulter l'état de mon profil
+                    & 3
+                    & 1\\
+            
+                \hline
+                    3
+                    & En tant qu'employé je veux voir la liste des utilisateurs connectés
+                    & 1
+                    & 2\\
+                    
+                    
+                \hline
+                    4
+                    & En tant que responsable RH je veux gérer les demandes de congés en attentes
+                    & 2
+                    & 1\\
+                
+                \hline  
+                    5 
+                    & En tant que responsable RH je veux gérer les demandes de sortie en attentes
+                    & 2
+                    & 1\\
+            
+                \hline
+                    6
+                    & En tant que responsable RH je veux consulter la statistique des utilisateurs présents
+                    & 1
+                    & 1\\
+                    
+                \hline
+                    7
+                    & En tant que manager je veux gérer les demandes d'achats en attentes
+                    & 2
+                    & 1\\
+                    
+                \hline
+                    8
+                    & En tant que manager je veux consulter la statistique des dépenses périodiques par an
+                    & 1
+                    & 1\\
+                    
+                \hline
+                    9
+                    & En tant que manager je veux consulter la statistique des achats effectués
+                    & 1
+                    & 1\\
+                    
+
+                \hline
+            
+                 
+              \captionsetup{justification=centering,margin=2cm}
+              \caption{Backlog du Sprint 6}
+
+            \end{longtable}
+
+     
+    \subsection{Spécification des besoins fonctionnels}
+    
+        La figure \ref{fig:UCsp6} représente le diagramme de cas d'utilisation du sprint "Réalisation du dashboard"
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCDashboard.png}
+        \caption{Diagramme de cas d'utilisation "Dashboard"}
+        \label{fig:UCsp6}
+        \end{figure}
+    
+    \subsection{Analyse du dashboard}
+    
+    Le dashboard de notre application est composé par sept éléments qui sont répartis sur deux colonnes.
+    Les éléments de la première colonne :
+        \begin{itemize}[label=\textbullet,font=\normalsize]
+        \item \textbf{La section de salutation :}
+        cette section contient un message de bienvenue pour l'utilisateur connecté et elle est visible à tous les rôles de l'application.
+        \item \textbf{La section des statistiques :} 
+        cette section contient trois types de statistiques qui sont tous visibles au manager mais seulement une est visible pour le responsable RH.
+        \item \textbf{La section des demandes en attentes :} 
+        Dans l'application Xhrm nous avons trois types de demandes (les demandes de congés ,les demandes de sortie et les demandes d'achats) pour cette section Nous voulons donner au responsable Rh et le manager la possibilité de répondre les demandes en attentes directement à partir du dashboard.
+        Cette section est bien évidemment visible que pour le responsable RH et le manager.
+        
+    
+        \end{itemize}
+        
+    Les éléments de la deuxième colonne :
+        \begin{itemize}[label=\textbullet,font=\normalsize]
+        \item \textbf{La section d'heure et date :}
+        Cette section contient l'heure et la date d'aujourd'hui et elle est visible pour tous les utilisateurs.
+        \item \textbf{La section des anniversaires du mois :}
+        Cette section contient la liste des anniversaires des employés de l'entreprise pour le mois présent et elle est visible pour tous les utilisateurs.
+        \item \textbf{La section de la liste des présences :}
+        Cette section contient la liste des utilisateurs qui ont marqué leur présence pour ce jour et elle est visible pour les utilisateurs qui ont le rôle employé ou un rôle supérieur.
+        \item \textbf{La section de l'état du profil :}
+        Cette section contient l'état du profil de l'utilisateur ,il va trouver aussi dans cette section son poste dans l'entreprise et son rôle dans l'application et elle est visible pour tous les utilisateurs.
+
+        \end{itemize}
+    \subsection{Réalisation}
+    
+        Pour la partie réalisation du sprint "Réalisation de dashboard" nous allons chaque fois représenter une capture de dashboard d'un utilisateur et on va commencer par le dashboard de "Maissa" la stagiaire.
+        
+        La figure \ref{fig:cap1sp6} représente le dashboard de "Maissa" la stagiaire.
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture2 Dash_"Maissa".PNG}}
+        \caption{Dashboard stagiaire}
+        \label{fig:cap1sp6}
+        \end{figure} 
+        
+        Maintenant nous connectons avec le compte de "Mourad" qui possède le rôle Employé et donc il va voir de plus la section "liste des présences".
+        
+        La figure \ref{fig:cap2sp6} représente le dashboard de "Mourad" l'employé.
+
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture1 Dash_"Mourad".PNG}}
+        \caption{Dashboard Employé}
+        \label{fig:cap2sp6}
+        \end{figure} 
+        
+        On passe maintenant au dashboard du Responsable Rh mais avant de déconnecter le compte de "Mourad" nous allons passer une demande de congé et une demande d'achat comme nous montrent les deux prochaines captures.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture5 DemandeCongé.PNG}}
+        \caption{Demande de congé}
+        \label{fig:cap3sp6}
+        \end{figure} 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture6 DemandAchat.PNG}}
+        \caption{Demande d'achat}
+        \label{fig:cap4sp6}
+        \end{figure} 
+        
+        Connectant maintenant avec le compte de "Ali" qui possède le rôle Responsable Rh et on remarque que deux sections de plus s'affichent. 
+        La première c'est la section de statistique mais seule la statistique des utilisateurs présents est visible pour le responsable Rh.
+        La deuxième c'est la section des demandes en attentes et on trouve dans la partie des demandes de congé la demande passée par "Mourad" dans la figure \ref{fig:cap3sp6}.
+        
+        La figure \ref{fig:cap5sp6} représente le dashboard de "Ali" le responsable.
+        
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture4 Dash_Ali.PNG}}
+        \caption{Dashboard Responsable RH}
+        \label{fig:cap5sp6}
+        \end{figure} 
+        
+        La figure \ref{fig:cap6sp6} représente le dashboard de  "Mohamed"  le manager. Il n'y a pas des nouvelles sections mais on remarque que dans la section statistique deux nouvelles statistiques apparaissent, et dans la section demandes en attentes il y a une onglet de plus pour les demandes d'achats.
+        
+        Puisque toutes les statistiques sont présentes maintenant nous allons les décrire.
+        
+        Tout d'abord le pourcentage des utilisateurs présents, on doit se rappeler que seulement "Mourad" et "Maissa" parmi les quatre utilisateurs qui ont marqué leurs présences on peut aussi remarquer ça en voyant la section "Équipe présent" et donc c'est pour cela on a juste 50\% des utilisateurs présents.
+        
+        Ensuite on a la statistique des dépenses périodique par an on se rappelle dans la réalisation du sprint "Gestion d'achat et dépenses"  "Mohamed"  le Manager a ajouté une dépense périodique pour l'allocation du bureau avec un montant de 1500 mensuel vous pouvez le voir dans la figure \ref{fig:cap3sp5}. 
+        Donc si on fait nos calculs et multiplier le montant de 1500 par 12 mois on va trouver le résultat affiché dans la deuxième statistique.
+        
+        Enfin la dernière statistique "le total d'achat", jusqu'à maintenant on a une seule demande d'achat acceptée, celle passée par "Mourad" dans le sprint précédent vous pouvez le voir dans la figure \ref{fig:cap6sp5}.
+        Dans cette demande, "Mourad" a demandé d'acheter 10 ordinateur portable dont le prix de l'unité est 3500. Et pour cela on trouve ce résultat affiché dans la troisième statistique.
+        
+        
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture3.PNG}}
+        \caption{Dashboard Manager}
+        \label{fig:cap6sp6}
+        \end{figure} 
+        
+        Maintenant on va accepter la deuxième demande d'achat passée par "Mourad" dans la figure \ref{fig:cap4sp6}.
+        Dans cette demande "Mourad" veut acheter 3 écran dont le prix de l'unité est 620.
+    
+        la figure \ref{fig:cap7sp6} nous montre la nouvelle valeur de la troisième statistique après que  "Mohamed"  le manager a accepté la demande d'achat de "Mourad".
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp6Capture7 DemandAchatAccepté.png}}
+        \caption{Statistique des achats}
+        \label{fig:cap7sp6}
+        \end{figure} 
+    
+
+
+\section*{Conclusion}
+Au cours de ce chapitre, nous avons présenté la réalisation de la troisième et la dernière Release "Gestion d'achat et dépenses". Pour ce faire, nous avons passé par l’analyse, la conception et la réalisation du sprint "gestion d'achats et Dépenses" et par l'étude et la réalisation du sprint "Réalisation du Dashboard"

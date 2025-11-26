@@ -1,0 +1,454 @@
+\chapter{Release 1: Gestion de l'entreprise et des comptes }
+
+
+% Une section
+
+% Exemple d'une section qui porte une référence à une bibliographie
+% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas où il y a une référence dans la table des matières.
+
+\section*{Introduction}
+
+Au cours de ce chapitre, nous allons présenter les différentes étapes de réalisation du premier sprint "Gestion de l'entreprise", et du deuxième sprint "Gestion des utilisateurs et authentification".
+
+\section{Sprint 1:Module gestion de l'entreprise } 
+    
+    Dans cette section nous allons présenter les différents étapes de la réalisation du premier sprint.
+
+    \subsection{Objectifs du sprint 1}
+
+        L’objectif du premier sprint est de développer le module « Gestion de l'entreprise » qui permet au manager de gérer le compte de son entreprise (créer ,compléter et modifier) et de créer son propre compte.
+        
+    \subsection{Backlog du sprint 1}
+    
+              \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant que manager je veux créer un compte pour mon entreprise afin d'utiliser les services offerts par l'application "XHRM"
+                    & 1
+                    & 2\\
+            
+                \hline
+                    2
+                    & En tant que manager je veux créer un compte manager afin de pouvoir gérer mon entreprise et ajouter mes collaborateurs
+                    & 2
+                    & 2\\
+            
+                \hline
+                    3
+                    & En tant que manager je veux compléter le profil de mon entreprise
+                    & 3
+                    & 2\\
+                    
+                
+                \hline  
+                    4
+                    & En tant que manager je veux modifier le profil de mon entreprise
+                    & 3
+                    & 2\\
+            
+                \hline
+                    5
+                    & En tant que manager je veux Gérer les départements de mon entreprise
+                    & 3
+                    & 2\\
+                    
+                \hline
+                    6
+                    & En tant que manager je veux gérer les postes par département
+                    & 4
+                    & 1\\
+                    
+                \hline
+                
+                 
+              \captionsetup{justification=centering,margin=2cm}    
+              \caption{Backlog du Sprint 1}
+
+            \end{longtable}
+
+    \subsection{Spécification des besoins fonctionnels}
+    
+        La figure \ref{fig:UCsp1} représente le diagramme cas d'utilisation du sprint "Gestion de l'entreprise"
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCGestionEntreprise.png}
+        \caption{Diagramme de cas d'utilisation "Gestion de l'entreprise"}
+        \label{fig:UCsp1}
+        \end{figure}
+    
+    \subsection{Diagramme de classe}
+        La figure \ref{fig:CDsp1} représente le diagramme de classe du sprint "Gestion de l'entreprise"
+        
+\begin{itemize}
+
+\item Une entreprise est caractérisée par (id Entreprise, nom Entreprise, Activité Entreprise, email, adresse, nombre de Personnel, téléphone, nombre de jours de congés), peut contenir plusieurs départements. 
+
+\item Un département est caractérisé par (id département, nom département) peut contenir plusieurs postes. 
+
+
+\item Un poste est caractérisé par (id poste, nom poste), peut contenir plusieurs utilisateurs.
+
+\item Un utilisateur est caractérisé par (id utilisateur, nom, prénom, nom d’utilisateur, mot de passe, email, adresse, téléphone, sexe, date de naissance, date d’arrivée, statut civil, discord, facebook, linkedin, slack, twitter), peut avoir un seul rôle.
+
+\item Un rôle est caractérisé par (id rôle, nom rôle) et peut être attribué à plusieurs utilisateurs.
+\end{itemize}    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionEntreprise.PNG}}
+        \caption{Diagramme de classe "Gestion de l'entreprise"}
+        \label{fig:CDsp1}
+        \end{figure}  
+
+    \subsection{Diagrammes dynamiques}
+    
+        Dans cette section nous allons présenter les diagrammes UML dynamique pour ce sprint.
+    
+        \subsubsection{Diagramme de séquence objet "Ajout d'entreprise"}
+            La figure \ref{fig:CDsp1} illustre le diagramme de séquence objet de l'inscription.
+            
+            Dans ce diagramme nous allons décrire le cas d'utilisation "ajout d'entreprise" avec les différents composants inclus dans cette processus, commençant par l'interaction entre le composant et le service dans la partie front-end passant par l' Api Rest et enfin l'interaction entre les classes côté serveur.
+            
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth,height=9cm]{img/SOaddEntreprise.png}}
+            \caption{Diagramme de séquence objet "ajout d'entreprise"}
+            \label{fig:SOsp1}
+            \end{figure}  
+    
+    \subsection{Réalisation}
+    
+    Pour mieux comprendre le fonctionnement de notre projet, nous allons présenter les différents fonctions de l'application "XHRM"en se basant sur un scénario.
+    
+    Dans ce contexte pour s'inscrire à l'application "XHRM" monsieur "Mohamed" doit remplir le formulaire d'inscription qui est composé de trois parties , la première partie est pour les coordonnées générales ,la deuxième est pour l'entreprise et la dernière c'est pour le compte principal qui va avoir le rôle Manager. Les trois premières figures nous montrent le formulaire d'inscription.
+    
+    Voir les figures \ref{fig:cap1sp1},\ref{fig:cap2sp1} et \ref{fig:cap3sp1}.
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture1.PNG}}
+        \caption{interface de création de compte entreprise 1.0}
+        \label{fig:cap1sp1}
+        \end{figure} 
+    
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture2.PNG}}
+        \caption{interface de création de compte entreprise 1.1}
+        \label{fig:cap2sp1}
+        \end{figure} 
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture3.PNG}}
+        \caption{interface de création de compte entreprise 1.2}
+        \label{fig:cap3sp1}
+        \end{figure} 
+        
+        Après l'inscription, l'application emmène le manager vers la page paramètre de l'entreprise pour qu'il puisse compléter les informations de son entreprise comme nous illustre la figure \ref{fig:cap4sp1}. 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture4.PNG}}
+        \caption{Page paramètre d'entreprise}
+        \label{fig:cap4sp1}
+        \end{figure} 
+        
+        Les trois prochaines captures dans les figures \ref{fig:cap5sp1}, \ref{fig:cap6sp1} et \ref{fig:cap7sp1}. vont nous montrer que la page "paramètre d'entreprise" offre aussi au manager la possibilité de gérer les postes et les départements de son entreprise et aussi elle le permet de fixer le nombre des jours de congés qu'un employé peut l'avoir pendant une année. 
+
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture5.PNG}}
+        \caption{interface poste et département }
+        \label{fig:cap5sp1}
+        \end{figure} 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture6.PNG}}
+        \caption{interface ajout du poste }
+        \label{fig:cap6sp1}
+        \end{figure} 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp1Capture7.PNG}}
+        \caption{interface profil entreprise fixer le nombre de jours de congé }
+        \label{fig:cap7sp1}
+        \end{figure} 
+    
+\section{sprint 2:Module gestion des utilisateurs et authentification} 
+
+    Dans cette section nous allons présenté les différents étapes permettant la réalisation du sprint "Gestion des utilisateurs et authentification".
+    
+    \subsection{Objectifs du sprint 2}
+    
+        L’objectif du deuxième sprint est de développer le module « Gestion des utilisateurs » qui permet aux utilisateurs d'authentifier et gérer leurs profils et permet aux responsable RH de gérer les comptes des utilisateurs
+
+    \subsection{Backlog du sprint 2}
+    
+            \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant qu'utilisateur je veux m'authenifier afin de connecter à l'application.
+                    & 1
+                    & 4\\
+            
+                \hline
+                    2
+                    & En tant que responsable RH je veux gérer les comptes utilisateurs afin d'ajouter des nouveaux utilisateurs ou les supprimer 
+                    & 2
+                    & 2\\
+            
+                \hline
+                    3
+                    & En tant qu'utilisateur je veux gérer mon profil
+                    & 3
+                    & 2\\
+                    
+                    
+                \hline
+                    4
+                    & En tant qu'utilisateur je veux changer mon mot de passe
+                    & 3
+                    & 1\\
+                
+                \hline  
+                    5 
+                    & En tant qu'utilisateur je veux consulter l'équipe de mon département
+                    & 3
+                    & 1\\
+            
+                \hline
+                    6
+                    & En tant que responsable RH je veux consulter toutes les équipes
+                    & 3
+                    & 1\\
+                    
+                \hline
+                    7
+                    & En tant qu'utilisateur je veux réinitialiser mon mot de passe afin de récupérer mon compte en cas d'oubli de mot de passe
+                    & 4
+                    & 3\\
+                    
+                \hline
+                    8
+                    & En tant que Manager je veux changer les rôle des utilisateurs afin de leurs accorder ou révoquer des privilèges
+                    & 4
+                    & 3\\
+                    
+                \hline
+            
+                 
+              \captionsetup{justification=centering,margin=2cm}    
+              \caption{Backlog du Sprint 2}
+
+            \end{longtable}
+            
+    \subsection{Technologies utilisées}
+        
+        Pour Réaliser la partie authentification de notre projet nous avons principalement nous basé sur ces deux technologies:
+
+        \begin{itemize}[label=\textbullet,font=\normalsize]
+            \item \textbf{JSON Web Token } 
+            
+            Un JSON Web Token est un jeton d’accès, qui permet un échange sécurisé de donnée entre deux ou plusieurs parties. Les JWT sont particulièrement appréciés pour les opérations d’identification. Cette sécurité se traduit par la vérification de l’intégrité des données à l’aide d’une signature numérique, qui vérifie si le message a été modifié pendant le transfert, et authentifie également l’expéditeur du JWT dans le cas d’un jeton signé avec une clé privée.\cite{webArticle19}
+            
+            
+            \item \textbf{Spring Security }
+            
+             Spring Security est un Framework de sécurité, dans le cadre d’authentification et de contrôle d’accès puissant des applications basées sur spring. La véritable force de Spring Security réside dans la facilité avec laquelle, elle peut être étendue pour répondre aux besoins personnalisées\cite{webArticle20}
+             
+             
+            
+        \end{itemize}
+    
+    \subsection{Spécification des besoins fonctionnels}
+    
+        La figure \ref{fig:UCsp2} représente le diagramme cas d'utilisation du sprint "Gestion des utilisateurs et authentification"
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCGestionUtilisateurs.png}
+        \caption{Diagramme de cas d'utilisation "Gestion des utilisateurs"}
+        \label{fig:UCsp2}
+        \end{figure}    
+    
+    \subsection{Diagramme de classe}
+        La figure \ref{fig:CDsp2} représente le diagramme de classe du sprint "Gestion des utilisateurs et authentification"
+        
+        \begin{itemize}
+        \item Un utilisateur est caractérisé par (id utilisateur, nom, prénom, nom d’utilisateur, mot de passe, email, adresse, téléphone, sexe, date de naissance, date d’arrivée, statut civil, discord, facebook, linkedin, slack, twitter), peut avoir un seul rôle.
+
+        \item Un rôle est caractérisé par (id rôle, nom rôle) et peut être attribué à plusieurs utilisateurs.
+        \end{itemize}
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionUtilisateur.PNG}}
+        \caption{Diagramme de classe "Gestion des utilisateurs"}
+        \label{fig:CDsp2}
+        \end{figure}   
+
+    \subsection{Diagrammes dynamiques}
+    
+        \subsubsection{Diagramme de séquence objet "Authentification"}
+        La figure \ref{fig:SOsp2} représente le diagramme de séquence objet de l'authentification d'un utilisateur à son espace dans l'application "XHRM".
+        
+        Dans ce diagramme nous illustrons les différents interactions entre l'utilisateur et les composants de notre projet.
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/SOauthentication.png}}
+            \caption{Diagramme de séquence objet "Authentification"}
+            \label{fig:SOsp2}
+            \end{figure} 
+    
+        \subsubsection{Diagramme de séquence système "Ajout utilisateur"}
+            La figure \ref{fig:SSsp2} représente le diagramme de séquence système de l'ajout d'un utilisateur qui peut être réalisé par l'acteur Responsable RH ou bien par le Manager.
+            
+            Ce diagramme nous montre l'interaction de l'acteur avec le système pour réaliser l'ajout d'un utilisateur.
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/SSaddUser.png}}
+            \caption{Diagramme de séquence système "Ajout utilisateur"}
+            \label{fig:SSsp2}
+            \end{figure} 
+            
+        
+        \subsubsection{Diagramme d'activité "Réinitialisation du mot de passe"}
+            La figure \ref{fig:ADsp2} représente le diagramme d'activité de la réinitialisation du mot de passe.
+            
+            Ce diagramme nous décrit le cas d'utilisation "Réinitialisation du mot de passe" et les différents interactions entre l'utilisateur, le système et la base de donnés commençant par l'affichage de l'interface de réinitialisation jusqu'au stockage du nouveau mot de passe.
+            
+            On note que l'utilisateur doit fournir un nom d'utilisateur valide pour qu'il puisse passer à l'interface de réinitialisation.
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/diagrammeactivité.jpg}}
+            \caption{Diagramme d'activité "Réinitialisation du mot de passe"}
+            \label{fig:ADsp2}
+            \end{figure} 
+            
+    \subsection{Réalisation}
+        La figure \ref{fig:cap1sp2} représente la page équipe de l'application qui nous permet de gérer les utilisateurs.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture1.PNG}}
+        \caption{interface équipe par département}
+        \label{fig:cap1sp2}
+        \end{figure} 
+        
+        Après avoir inscrire à l'application monsieur "Mohamed" veut ajouter ses employés dans l'application et pour cela il doit remplir le formulaire d'ajout d'utilisateur comme nous montre la figure \ref{fig:cap2sp2} .On peut constater que les champs département et poste sont présentés par une liste déroulante.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture2.PNG}}
+        \caption{Formulaire d'ajout d'utilisateur}
+        \label{fig:cap2sp2}
+        \end{figure} 
+        
+        Après la validation du formulaire l'utilisateur "Ali" avec le rôle Employé est ajouté avec succès à l'entreprise de monsieur "Mohamed".
+        
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture3.PNG}}
+        \caption{L'employé est ajouté}
+        \label{fig:cap3sp2}
+        \end{figure} 
+        
+        Avec l'ajout de l'utilisateur l'application envoie un email instantanément contenant les coordonnées de connexion (nom d'utilisateur et mot de passe) vers l'adresse mail fournie dans le formulaire comme nous indique la figure \ref{fig:cap4sp2}.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture4.PNG}}
+        \caption{L'email contenant les coordonnées de connexion}
+        \label{fig:cap4sp2}
+        \end{figure} 
+        
+        Maintenant on va déconnecter le compte de "Mohamed" le manager et on va connecter par le compte de "Ali" l'employé.
+        La figure \ref{fig:cap5sp2} représente la page profil utilisateur.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture5.PNG}}
+        \caption{Profil utilisateur}
+        \label{fig:cap5sp2}
+        \end{figure} 
+        
+        La page profil permet l'utilisateur de compléter et modifier les informations de son profil ,elle lui permet aussi de changer ses coordonnées de connexion comme nous illustrent les deux prochaines captures, voir figures \ref{fig:cap6sp2} et \ref{fig:cap7sp2}.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture6.PNG}}
+        \caption{Interface gestion du profil}
+        \label{fig:cap6sp2}
+        \end{figure} 
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture7.PNG}}
+        \caption{Changement du mot de passe }
+        \label{fig:cap7sp2}
+        \end{figure} 
+        
+        Maintenant on va revenir à la page équipe mais cette fois ci par le compte de "Ali" qui possède le rôle Employé et on peut rapidement constater qu'il ne peut pas ni ajouter ni voir les autres utilisateurs hormis son département.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture8.PNG}}
+        \caption{Page équipe de l'employé}
+        \label{fig:cap8sp2}
+        \end{figure} 
+        
+        On déconnecte le compte de "Ali" et on reconnecte une autre fois par le compte de "Mohamed".
+        On remarque que "Mohamed" peut voir les utilisateurs de tous les départements aussi il peut les supprimer ou modifier leurs rôles.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture9.PNG}}
+        \caption{Modifier employé}
+        \label{fig:cap9sp2}
+        \end{figure} 
+        
+        La figure \ref{fig:cap10sp2} montre "Mohamed" qui va changer le rôle de "Ali" et lui attribuer le rôle Responsable RH.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture10.PNG}}
+        \caption{Changement du rôle}
+        \label{fig:cap10sp2}
+        \end{figure} 
+        
+        Maintenant on connecte par le compte de "Ali" qui est maintenant un responsable RH et on remarque par la figure \ref{fig:cap11sp2} qu'il peut ajouter des utilisateurs.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp2Capture11.PNG}}
+        \caption{Page équipe du responsable RH }
+        \label{fig:cap11sp2}
+        \end{figure} 
+
+
+\section*{Conclusion}
+Au cours de ce chapitre, nous avons présenté la réalisation de la première release "Gestion de l'entreprise et des comptes". Pour ce faire, nous avons passé par l’analyse, la conception et la réalisation des deux premièrs sprints.
+
+
+

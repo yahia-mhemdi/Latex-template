@@ -1,0 +1,446 @@
+\chapter{Release 2: Gestion d'activité de ressources humaines}
+
+
+
+% Une section
+
+% Exemple d'une section qui porte une référence à une bibliographie
+% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas où il y a une référence dans la table des matières.
+
+\section*{Introduction}
+Dans ce chapitre, nous allons présenter les différentes étapes de réalisation du troisième sprint "Gestion des Congés et des permission des sorties", et du quatrième sprint "Gestion de présence et du compte rendu d'activité". 
+
+\section{sprint 3:Module gestion des Congés et des permission des sorties} 
+
+Dans cette section nous allons présenter les différents étapes de la réalisation du sprint "Gestion des Congés et des permission des sorties".
+    \subsection{Objectifs du sprint 3}
+    
+        L’objectif du troisième sprint est de développer le module « Gestion des congés et permission de sorties » qui permet en premier lieu aux utilisateurs de gérer leurs demandes de sorties et en deuxième lieu aux employés de gérer leurs demandes de congés et qui permet au responsable RH de gérer toutes ces demandes.
+
+    \subsection{Backlog du sprint 3}
+    
+            \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant qu'employé je veux passer une demande de congé
+                    & 1
+                    & 1\\
+            
+                \hline
+                    2
+                    & En tant qu'employé je veux consulter l'état de ma demande de congé
+                    & 2
+                    & 1\\
+            
+                    
+                \hline
+                    3
+                    & En tant qu'employé je veux consulter l'historique de mes demandes de congés
+                    & 3
+                    & 1\\
+                    
+                \hline
+                    4
+                    & En tant qu'employé je veux consulter mes congés
+                    & 4
+                    & 1\\
+                    
+                \hline  
+                    5
+                    & En tant qu'utilisateur je veux passer une demande d'autorisation de sortie
+                    & 5
+                    & 1\\
+            
+                \hline
+                    6
+                    & En tant qu'utilisateur je veux consulter l'état de ma demande de sortie
+                    & 6
+                    & 1\\
+
+                    
+                \hline
+                    7
+                    & En tant qu'employé je veux consulter l'historique de mes demandes d'autorisations de sortie
+                    & 7
+                    & 1\\
+                
+                \hline  
+                    8
+                    & En tant qu'utilisateur je veux annuler ma demande
+                    & 8
+                    & 1\\
+            
+                    
+                \hline
+                    9
+                    & En tant que responsable RH je veux consulter la liste des demandes en attentes
+                    & 9
+                    & 1\\
+                    
+                \hline
+                    10
+                    & En tant que responsable RH je veux accepter une demande
+                    & 10
+                    & 1\\
+                    
+                \hline
+                    11
+                    & En tant que responsable RH je veux refuser une demande
+                    & 10
+                    & 1\\
+                    
+
+                \hline
+                    12
+                    & En tant que responsable RH je veux consulter l'historique des congés prises par chaque utilisateur
+                    & 11
+                    & 3\\
+                    
+                \hline
+            
+                 
+              \captionsetup{justification=centering,margin=2cm}
+              \caption{Backlog du Sprint 3}
+
+            \end{longtable}
+            
+    \subsection{Spécification des besoins fonctionnels}
+    
+    La figure \ref{fig:UCsp3} représente le diagramme de cas d'utilisation du sprint "Gestion de congé et autorisation" 
+
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCGestionCongé&Sortie.png}
+        \caption{Diagramme de cas d'utilisation "Gestion de congé et autorisation"}
+        \label{fig:UCsp3}
+        \end{figure}
+    
+    \subsection{Diagramme de classe}
+    
+    La figure \ref{fig:CDsp3} représente le diagramme de classe du sprint "Gestion de congé et autorisation". 
+    
+    \begin{itemize}
+         \item Un utilisateur peut avoir plusieurs congés. Un congé est caractérisé par (id congé, nombre de jours, date début, raison).
+
+        \item Un utilisateur peut avoir plusieurs autorisations de sortie. Une autorisation est caractérisée par (id autorisation, nombre d’heures, date, heure de sortie). 
+        \end{itemize}
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionCongé.PNG}}
+        \caption{Diagramme de classe "Gestion de congé et autorisation}
+        \label{fig:CDsp3}
+        \end{figure}   
+    
+    \subsection{Diagrammes dynamiques}
+    
+    Dans cette partie nous allons présenter un diagramme séquence système pour la procédure de traitement d'une demande de congé et un diagramme état transition pour montrer les différents état qu'une demande peut l'avoir.
+    
+        \subsubsection{Diagramme de séquence système "Traiter une demande de congé"}
+        
+        La figure \ref{fig:SSsp3} représente le diagramme de séquence système de la procédure de traitement d'une demande de congé entre les deux acteurs Employé et Responsable RH avec le système.
+        
+        Ce diagramme nous montre les différents interactions entre les deux acteurs Employé et Responsable Rh avec le système afin de décrire toute la procédure du demande de congé.
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/SStimeOff.png}}
+            \caption{Diagramme de séquence système "Traiter une demande de congé"}
+            \label{fig:SSsp3}
+            \end{figure} 
+            
+        \subsubsection{Diagramme d'état transition "État d'une demande"}
+        
+        La figure \ref{fig:STsp3} représente le diagramme d'état transition d'une demande.
+        La demande peut avoir quatre état comme nous montre le diagramme suivant.
+        
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/EtatTransitionAchat.png}}
+            \caption{Diagramme d'état transition "État d'une demande"}
+            \label{fig:STsp3}
+            \end{figure} 
+    
+    \subsection{Réalisation}
+    
+    Avant de commencer la partie réalisation de ce sprint on doit se rappeler des comptes déjà crées pour l'entreprise XtendPlex de monsieur "Mohamed ".
+    Jusqu'à maintenant on a le compte "Mohamed " avec le rôle Manager et le compte de "Ali"  qui possède maintenant le rôle Responsable RH.
+    Il faut noter que nous avons ajouté deux autres utilisateurs, "Mourad " avec le rôle Employé et "Maissa" avec le rôle Stagiaire.
+    
+    Ces quatre comptes vont nous accompagner pour le reste du rapport alors si l'on récapitule on a:
+        \begin{itemize}
+        \item Compte "Mohamed " avec le rôle \textbf{Manager}
+        \item Compte "Ali"  avec le rôle \textbf{Responsable Rh}
+        \item Compte Mourad avec le rôle \textbf{Employé}
+        \item Compte "Maissa" avec le rôle \textbf{Stagiaire}
+        \end{itemize}   
+        
+    La figure \ref{fig:cap1sp3} représente l'interface d'autorisation.
+    On est maintenant connecté avec le compte de Mourad et puisqu'il possède le rôle Employé ,on peut remarquer qu'il y a deux onglets qui sont affichés, la première est pour la section congé et la deuxième est pour les autorisations de sortie.
+    
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture1.PNG}}
+        \caption{interface demande de congé}
+        \label{fig:cap1sp3}
+        \end{figure} 
+        
+    La figure \ref{fig:cap2sp3} représente le formulaire de demande de congé.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture2.PNG}}
+        \caption{formulaire de demande de congé}
+        \label{fig:cap2sp3}
+        \end{figure} 
+    
+    La figure \ref{fig:cap3sp3} nous montre que la demande de congé passée par Mourad est enregistrée avec succès.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture3.PNG}}
+        \caption{demande de congé ajoutée}
+        \label{fig:cap3sp3}
+        \end{figure} 
+        
+    La figure \ref{fig:cap4sp3} représente l'interface des autorisations de sortie.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture4.PNG}}
+        \caption{interface demande d'autorisation de sortie}
+        \label{fig:cap4sp3}
+        \end{figure} 
+        
+    La figure \ref{fig:cap5sp3} représente le formulaire de demande d'une autorisation de sortie.
+    Après avoir demander un congé avec une durée de trois jours monsieur Mourad a passé aussi une demande d'autorisation de sortie pour une durée de deux heures pour le 28 juin.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture5.PNG}}
+        \caption{formulaire demande d'autorisation de sortie}
+        \label{fig:cap5sp3}
+        \end{figure} 
+        
+    Maintenant nous changeons du compte et nous allons connecter avec le compte de "Ali"  qui possède le rôle responsable RH comme vous pouvez voir dans la navbar.
+    En regardant la figure \ref{fig:cap7sp3} on constate rapidement qu'il y a deux onglets de plus sont ajoutés à la section Autorisation qui sont "Approbation en attente" et "vue global".
+    Dans cette figure nous sommes dans l'onglet "Approbation en attente" dont on y trouve les deux demandes de monsieur Mourad.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture7.PNG}}
+        \caption{interface approbation en attente }
+        \label{fig:cap7sp3}
+        \end{figure} 
+        
+    Dans la figure \ref{fig:cap8sp3} Monsieur "Ali"  le responsable Rh a accepté la demande de sortie et il va aussi accepter la demande de congé.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture8.PNG}}
+        \caption{la demande est acceptée }
+        \label{fig:cap8sp3}
+        \end{figure} 
+        
+    Maintenant en naviguant à l'onglet "Vue global" comme nous illustre la figure \ref{fig:cap9sp3} on trouve la liste de tous les utilisateurs avec pour chacun le nombre de jours de congé restants et si vous vous rappelez bien dans le premier sprint dans la figure \ref{fig:cap7sp1} nous avons montré que le manager a fixé le nombre de jours de congé à 20.
+    Tous les utilisateurs possèdent leurs 20 jours hormis Mourad qui a pris 3 jours et on trouve aussi le détail de son congé.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture9.PNG}}
+        \caption{interface vue global des congés par utilisateur}
+        \label{fig:cap9sp3}
+        \end{figure} 
+        
+    On reconnecte maintenant avec le compte de Mourad pour trouver que sa demande a été acceptée.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture10.PNG}}
+        \caption{historique des demandes de sortie}
+        \label{fig:cap10sp3}
+        \end{figure} 
+    
+    
+    
+\section{Sprint 4:Module gestion de présence et Compte rendu d'activité } 
+Dans cette section nous allons présenter les différents étapes de la réalisation du sprint "Gestion de présence et Compte rendu d'activité".
+    \subsection{Objectifs du sprint 4}
+    
+        L’objectif du quatrième sprint est de développer le module « Gestion de présence et Compte rendu d'activité » qui permet aux utilisateurs de faire le pointage et de consulter leurs listes de présence.
+        De plus, permettant au manager et aux responsables RH de consulter les listes de présences de tous les employés de l'entreprise.
+
+    \subsection{Backlog du sprint 4}
+    
+            \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
+                
+                \hline 
+                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                \hline
+                \endhead
+                 \endfoot
+                  \endlastfoot
+                \hline  
+                    1 
+                    & En tant qu'utilisateur je veux marquer l'heure d'entrée afin de marquer ma présence
+                    & 1
+                    & 1\\
+            
+                \hline
+                    2
+                    & En tant qu'utilisateur je veux marquer l'heure de sortie 
+                    & 2
+                    & 1\\
+            
+                \hline
+                    3
+                    & En tant qu'utilisateur je veux consulter ma liste de présence
+                    & 3
+                    & 1\\
+                    
+                    
+                \hline
+                    4
+                    & En tant que consultant je veux consulter mon compte rendu d'activité par mois afin d'avoir un rapport sur mon activité de chaque jour de ce mois
+                    & 4
+                    & 5\\
+                
+                \hline  
+                    5 
+                    & En tant que responsable RH je veux consulter la liste des pointages
+                    & 5
+                    & 3\\
+            
+                \hline
+                    6
+                    & En tant que responsable RH je veux consulter la liste des présences
+                    & 6
+                    & 1\\
+                    
+                \hline
+                    7
+                    & En tant que responsable RH je veux consulter la liste des absences
+                    & 6
+                    & 1\\
+                    
+
+                \hline
+            
+                 
+              \captionsetup{justification=centering,margin=2cm}
+              \caption{Backlog du Sprint 4}
+
+            \end{longtable}
+
+    \subsection{Spécification des besoins fonctionnels}
+    
+        La figure \ref{fig:UCsp4} représente le diagramme cas d'utilisation du sprint "Gestion de présence et compte rendu d'activité".
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\columnwidth]{img/UCPointage&Presence.png}
+        \caption{Diagramme de cas d'utilisation "Gestion de présence et compte rendu d'activité"}
+        \label{fig:UCsp4}
+        \end{figure}    
+    
+    \subsection{Diagramme de classe}
+    
+        La figure \ref{fig:CDsp4} représente le diagramme de classe du sprint "Gestion de présence et compte rendu d'activité".
+        
+        \begin{itemize}
+            \item Un utilisateur doit avoir une liste de pointage. Une liste de pointage est caractérisée par (id pointage, heure d’entrée, heure de sortie, date).
+        \end{itemize}
+        
+    
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionPrésence.PNG}}
+        \caption{Diagramme de classe "Gestion de présence"}
+        \label{fig:CDsp4}
+        \end{figure}   
+    
+    \subsection{Diagrammes dynamiques}
+    
+        \subsubsection{Diagramme de séquence objet "marquer l'heure d'entrée"}
+        
+            La figure \ref{fig:SSsp3} représente le diagramme de séquence objet du cas d'utilisation "marquer l'heure d'entrée".
+            
+            Ce diagramme représente les différents interactions de l'acteur avec les composants du projet afin de marquer son présence.
+            
+            
+        
+            \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=0.9\columnwidth]{img/SOpresence.png}}
+            \caption{Diagramme de séquence objet "marquer l'heure d'entrée"}
+            \label{fig:SSsp3}
+            \end{figure} 
+    
+    
+    \subsection{Réalisation}
+    
+    Pour la réalisation du quatrième sprint nous allons nous connecter avec le compte de "Maissa" qui possède le rôle Stagiaire. Ce qu'on remarque en premier lieu c'est que notre sidebar manque deux éléments puisqu'un utilisateur avec le rôle stagiaire ne peut pas faire ni des achats ni de consulter son compte rendu d'activité.
+    La figure \ref{fig:cap1sp4} représente la page présence et plus précisément l'onglet pointage.
+    
+
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture1.PNG}}
+        \caption{interface du pointage}
+        \label{fig:cap1sp4}
+        \end{figure} 
+    
+    La figure \ref{fig:cap2sp4} nous montre que "Maissa" a marqué son présence. 
+    On note aussi que Mourad a marqué son présence pour aujourd'hui.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture2.PNG}}
+        \caption{Liste du présence après le ClockIN}
+        \label{fig:cap2sp4}
+        \end{figure} 
+        
+    En connectant avec le compte de "Ali"  le Responsable Rh on remarque qu'un autre onglet apparaît dans la page présence.
+    La figure \ref{fig:cap3sp4} représente l'onglet présence dont on y trouve la liste des utilisateurs présents.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture3.PNG}}
+        \caption{Interface du présence}
+        \label{fig:cap3sp4}
+        \end{figure} 
+    
+    Maintenant on va visiter une nouvelle page dans notre application, et comme nous montre la figure \ref{fig:cap5sp4} c'est l'interface du compte rendu d'activité. 
+    En fait le compte rendu d'activité contient l'activité de l'utilisateur jour par jour et il est représenté par un calendrier sur une période que l'utilisateur peut la choisie (mois, semaine ou jour).
+    
+    Ici on a le compte rendu d'activité de "Ali"  il a joint l'entreprise le 22 juin il n'a aucun absence ni des congés ou des permissions de sortie.
+    
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture5 cra_ali.PNG}}
+        \caption{Compte rendu d'activité du Responsabe RH 'Ali'}
+        \label{fig:cap5sp4}
+        \end{figure} 
+        
+    Dans la figure \ref{fig:cap6sp4} on trouve le compte rendu de Mourad on doit se rappeler d'abord que dans la réalisation du sprint précédent Mourad a pris un congé d'une période de 3 jours et aussi une permission de sortie pour le 28 juin.
+        
+        \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture6 cra_mourad.png}}
+        \caption{Compte rendu d'activité de l'employé 'Mourad'}
+        \label{fig:cap6sp4}
+        \end{figure} 
+        
+
+\section*{Conclusion}
+Au cours de ce chapitre, nous avons présenté la réalisation de la deuxième Release "Gestion d'activité de ressources humaines". Pour ce faire, nous avons passé par l’analyse, la conception et la réalisation des deux sprints "Gestion des Congés et des permission des sorties" et "Gestion de présence et du compte rendu d'activité".
