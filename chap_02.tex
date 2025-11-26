@@ -1,567 +1,63 @@
-﻿
-\chapter{Analyse et spÃ©cification des besoins}
-% Une section
-
-% Exemple d'une section qui porte une rÃ©fÃ©rence Ã  une bibliographie
-% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas oÃ¹ il y a une rÃ©fÃ©rence dans la table des matiÃ¨res.
+﻿\chapter{Analyse et specification des besoins}
 
 \section*{Introduction}
 
-Dans ce chapitre, nous prÃ©sentons une analyse des besoins fonctionnels et non fonctionnels de notre applications en prÃ©cisant les diffÃ©rents acteurs de notre systÃ¨me, le diagramme de classe et la planification de travail. Nous allons ainsi prÃ©sentÃ© l'architecture et les maquettes utilisÃ©es.
+This chapter presents a detailed analysis of the functional and non-functional requirements of the LMS. It identifies system actors, summarises the main use cases, and describes the technical architecture and planning adopted during the internship.
 
-\section{SpÃ©cification des besoins}
+\section{Functional requirements}
 
-    \subsection{SpÃ©cification des besoins fonctionnels}
-        \subsubsection{Identification des acteurs}
-        Dans cette partie, nous allons commencer par dÃ©finir  les diffÃ©rents acteurs qui contribuent dans notre application ainsi que la dÃ©finition de leurs rÃ´les.
+\subsection{Actors and roles}
 
-Dans lâ€™application LMS, les acteurs sont : Manager, Responsable RH, EmployÃ©, Consultant, Stagiaire. Il faut bien noter que chaque rÃ´le possÃ¨de les permissions du rÃ´le prÃ©cÃ©dent, par exemple le consultant peut faire tout ce qu'un stagiaire peut faire et il possÃ¨de de plus les permissions d'un consultant et l'employÃ© peut faire tout ce qui peut un consultant et un stagiaire et il a davantage de permissions.
-
-
-
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{Stagiaire}
-C'est une personne saisonniÃ¨re donc son rÃ´le va lui permet d'avoir le moindre de permissions tels que marquer la prÃ©sense et la gestion du profil...
-
-\item \textbf{Consultant :}
-Câ€™est un  prestataire de services de conseil et ce n'est pas un Ã©lÃ©ment permanent dans l'entreprise .Il a plus de permissions que le stagiaire mais son rÃ´le reste restreint.
-
-\item \textbf{EmployÃ©}
-C'est une personne permanente dans l'entreprise ce qu'il permet d'avoir plus des permissions que les deux rÃ´les prÃ©cÃ©dents tels que  passer une demande de congÃ© ou bien demande d'achat.
-
-\item \textbf{Responsable RH :}
-Câ€™est qui conseille le personnel des entreprises et coordonne toutes les activitÃ©s dans divers domaines des ressources humaines donc son rÃ´le lui permet d'accÃ¨der aux informations des employÃ©s de leur entreprise ainsi qu'il peut rÃ©pondre aux demandes de sortie et de congÃ©.
-
-\item \textbf{Manager :}
-Câ€™est le super admin le propriÃ©taire de l'entreprise, le rÃ´le le plus important.Il supervise et dirige l'entreprise son rÃ´le lui donne l'accÃ©s Ã  tous les modules de l'application il peut aussi gÃ©rer les rÃ´les des autres utilisateurs.
-
-\end{itemize}
-
-        \subsubsection{SpÃ©cification des besoins fonctionnels par acteur}
-            
-
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{Stagiaire :}
-                  
-                    \begin{itemize}
-                        \item GÃ©rer son profil.
-                        \item Consulter son dashboard.
-                        \item Marquer lâ€™heure dâ€™entrÃ©e.
-                        \item Marquer lâ€™heure de sortie.
-                        \item Consulter sa liste de pointage.
-                        \item Rechercher un utilisateur.
-                        \item Consulter son dashboard.
-                        \item Demander une autorisation de sortie.
-                        \item consulter lâ€™Ã©quipe de son dÃ©partement.
-                     \end{itemize} 
-
-                    
-\item \textbf{Consultant :}
-                
-                    \begin{itemize}
-                        \item Consulter son compte rendu d'activitÃ©.
-                        \end{itemize}
-                         
-\item \textbf{EmployÃ© :}
-                 
-                    \begin{itemize}
-                        \item Demander un congÃ©.
-                        \item Demander un achat.
-                     \end{itemize}
-                     
-\item \textbf{Responsable RH :}
-                   
-                    \begin{itemize}
-                        \item GÃ©rer les comptes des employÃ©s.
-                        \item Consulter les absences et les prÃ©sences.
-                        \item GÃ©rer les congÃ©s.
-                        \item GÃ©rer les autorisations de sortie.
-                        \item Consulter les Ã©quipe de tous les dÃ©partements.
-                     \end{itemize}
-
-\item \textbf{Manager :}
-                    \begin{itemize}
-                        \item GÃ©rer les rÃ´les des utilisateurs.
-                        \item GÃ©rer les demandes dâ€™achat.
-                        \item GÃ©rer les fournisseurs. 
-                        \item GÃ©rer les dÃ©penses pÃ©riodiques.
-                        \item GÃ©rer le compte de son entreprise.
-                    \end{itemize}          
-
-\end{itemize}
-        \newpage
-        \subsubsection{Diagramme de cas dâ€™utilisation global}
-            \begin{figure}[H]
-            \centering
-            \\includegraphics[width=1\columnwidth]{}
-            \caption{Diagramme cas d'utilisation global}
-            \label{fig:diagramme cas utilisation global}
-            \end{figure}
-        Notons qu'un utilisateur peut Ãªtre un consultant, un stagiaire, un employÃ©, un manager ou un responsable ressources humaines.
-
-    \subsection{SpÃ©cification des besoins non fonctionnels}
-La spÃ©cification des besoins ne se limite pas Ã  l'identification des acteurs et Ã  la dÃ©finition des besoins fonctionnels. D'autres limites doivent Ãªtre dÃ©finies pour faciliter l'utilisation, afin de mieux comprendre la structure et la fonctionnalitÃ© et assurer une bonne expÃ©rience utilisateur. 
-
-Ã‰tant donnÃ© que notre application Web est destinÃ©e aux employÃ©s, ses interfaces doivent Ãªtre ergonomiques pour faciliter la navigation sur le site et pour que l'utilisateur comprenne les caractÃ©ristiques et la structure.
-
-\begin{itemize}[label=\textbullet]
-\item \textbf{La navigation (lâ€™expÃ©rience utilisateur) :}
-Notre application devrait fournir Ã  l'utilisateur le confort de navigation (un bon systÃ¨me de navigation), permettant de minimiser l'efforts pour atteindre la partie qu'il cherche. Ce dernier doit s'Ã©loigner en un seul clic et revenir facilement Ã  la section prÃ©cÃ©dente ou dans la position de dÃ©part grÃ¢ce Ã  un fil dâ€™Ariane (SideBar).
-
-\item \textbf{Lâ€™accessibilitÃ© (responsivitÃ©) :}
-L'accÃ¨s Ã  l'application couvre un grand nombre de visiteurs avec diffÃ©rents matÃ©riels. Cette accessibilitÃ© est principalement liÃ©e Ã  la taille et Ã  la rÃ©solution de l'Ã©cran. Pour ce faire, vous devez vous assurer une expÃ©rience de lecture idÃ©ale pour l'utilisateur, quelle que soit la gamme d'appareil grÃ¢ce Ã  la responsive design.
-
-\item \textbf{Lâ€™interactivitÃ© :}
-L'Ã©change entre l'application et l'utilisateur doit Ãªtre simple et facile. 
-Le but principal de ce critÃ¨re est de surmonter les obstacles afin de garantir une bonne Ã©tape de dÃ©couverte jusqu'Ã  la construction d'une relation entre l'employÃ© et l'administrateur.
-
-\item \textbf{Lâ€™harmonie et la clartÃ© :}
-Respecter la charte graphique dans notre application est essentiel pour l'harmonie, la cohÃ©rence graphique, la visibilitÃ© et la lisibilitÃ© des textes et du contenu de chaque page.
-
-\item \textbf{La rapiditÃ© :}
-Le systÃ¨me doit agir rapidement dans les diffÃ©rentes demandes envoyÃ©es par les utilisateurs.
-
-\item \textbf{La sÃ©curitÃ© et lâ€™intÃ©gritÃ© :}
+The system defines the following primary actors:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-\item Le systÃ¨me garantit le contrÃ´le d'accÃ¨s. 
-\item Chaque utilisateur ne contribue qu'aux pages autorisÃ©es par son rÃ´le.
-\end{itemize}
-\end{itemize}
-
-
-
-\section{Diagramme de classe} 
-
-Ci-dessous dans la figure \ref{fig:diagrammeclasseglobal}, nous reprÃ©sentons le diagramme de classe global de notre application. Nous dÃ©taillons ses classes dans chaque sprint.
-
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.9\columnwidth]{}}
-\caption{Diagramme de classe global}
-\label{fig:diagrammeclasseglobal}
-\end{figure}
-
-
-\section{Planification de travail} 
- 
-    \subsection{RÃ©partition des releases}
-    
-        \begin{longtable}{|m{2cm}|m{13cm}|}
-
-        
-                \hline 
-                    \textbf{Release ID} & \textbf{Nom du Sprint} \\
-                \hline
-                \endhead
-                 \endfoot
-                  \endlastfoot
-                \hline 
-                    1
-                    & 
-                  \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item Sprint 1:Gestion de lâ€™entreprise.
-                        \item Sprint 2:Gestion des utilisateurs et authentification.
-                    \end{itemize}
-                    \\
-                \hline 
-                    2
-                    & 
-                    \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item sprint 3:Module gestion des CongÃ©s et des permissions des sorties
-                        \item Sprint 4:Module gestion de prÃ©sence et Compte rendu d'activitÃ© 
-                        
-                    \end{itemize}
-                    \\
-                \hline 
-                    3
-                    & \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item Sprint 5: Module gestion d'achats et DÃ©penses.
-                        \item Sprint 6: RÃ©alisation du Dashboad.
-                      \end{itemize}
-                    \\
-                \hline 
-            \captionsetup{justification=centering,margin=2cm}
-            \caption{RÃ©partition des releases}
-            \label{tab:RÃ©partition des releases}
-               
-            \end{longtable}
-
-
-    \subsection{Planification des sprints}
-    La figure \ref{fig:Planification des sprints} reprÃ©sente le diagramme de Gantt illustrant la rÃ©partition du travail tout au long de la pÃ©riode de stage.
-            
-        \begin{figure}[H]
-        \centering
-        \frame{\\includegraphics[width=0.9\columnwidth]{}}
-
-        % \frame{\\includegraphics[width=1\columnwidth]{}}
-        \caption{Planification des sprints}
-        \label{fig:Planification des sprints}
-        \end{figure}
-
-    
-\section{Architecture de lâ€™application} 
-    \subsection{Architecture logique}
-
-Lâ€™architecture logique de notre application est divisÃ©e en deux parties, une partie Back-end et une partie Front-end.
-
-La partie Front-end est basÃ©e sur le fameux Framework modulaire Angular. Chaque module est
-composÃ© dâ€™un composant contenant la logique de base de la page et un template qui traite de la vue de l'application.
-Un composant injecte la couche service, une couche d'abstraction qui permet de gÃ©rer le logique mÃ©tier
-de lâ€™application. Il assure la communication avec les services du backend, via les requÃªtes HTTP.
-Les donnÃ©es Ã©changÃ©es entre la partie Front-end et la partie Back-end sont de type JSON.
-
-La partie Back-end est basÃ© sur le Framework Spring boot. Son conteneur constitue le cÅ“ur de ce
-Framework. Il obtient ses instructions sur les objets Ã  instancier, configurer et assembler en lisant les
-mÃ©tadonnÃ©es de configuration fournies.
-
-La figure \ref{fig:archispring} reprÃ©sente lâ€™architecture logique de Spring-Boot
-
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.9\columnwidth]{}}
-\caption{Architecture logique Back-End (Spring-Boot)}
-\label{fig:archispring}
-\end{figure}
-
-
-\subsubsection{Architecture logique d' Angular}
-Angular est un Framework pour crÃ©er la partie Front End des applications web en utilisant HTML et JavaScript ou TypeScript compilÃ© en JavaScript.Une application Angular se compose de \cite{webArticle15}:
-
-\begin{itemize}
-        \item Un Ã  plusieurs modules dont un est principal.
-        \item Chaque module peut inclure :
-            \begin{itemize}[label=\textbullet]
-            \item \textbf{Des composant web :}
-                             La partie visible de l'application Web (IHM)
-            \item \textbf{Des services pour la logique applicative :}
-                             Les composants peuvent utiliser les services via le principe de lâ€™injection des dÃ©pendances.
-            \item \textbf{Les directives :}
-                             un composant peut utiliser des directives
-            \item \textbf{Les pipes :}
-                             utilisÃ©s pour formater lâ€™affichage des donnÃ©es dans els composants.
-            \end{itemize}
-                        
-\end{itemize} 
-
-
-
-
-
-
-La figure \textbf{\ref{fig:archiang}} reprÃ©sente lâ€™architecture logique d'Angular :
-
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.9\columnwidth]{}}
-\caption{Architecture logique Front-End (Angular)\cite{webArticle14}}
-\label{fig:archiang}
-\end{figure}
-
-    
-    \subsection{Architecture physique}
-
-Notre application repose sur une architecture 3-tiers.
-La figure \ref{fig:archiPhy}, reprÃ©sente les interactions entre les diffÃ©rents niveaux, ainsi que l'architecture physique que nous avons adoptÃ©
-
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.9\columnwidth]{}}
-\caption{Architecture physique}
-\label{fig:archiPhy}
-\end{figure}
-
-
-Notre application est divisÃ©e en quatre couches :
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{La couche prÃ©sentation des donnÃ©es } contient les composants graphiques de l'application et tous les interfaces.
-
-\item \textbf{Le REST API } qui garantit le lien entre les composants graphiques et les composants mÃ©tiers dans notre application, En s'appuyant sur le protocole HTTP hors ligne, les utilisateurs peuvent simplement y accÃ©der via un autre Ã©lÃ©ment du SI et des applications clientes.
-
-\item \textbf{La couche mÃ©tier des donnÃ©es } correspond Ã  la mise en place de l'ensemble de la logique applicative et des rÃ¨gles de gestion.
-
-\item \textbf{La couche accÃ¨s aux donnÃ©es } correspond aux donnÃ©es qui sont destinÃ©es Ã  Ãªtre conservÃ©es dans la base de donnÃ©es.
+  \item \textbf{Student}: registers, enrolls in courses, accesses lectures, asks questions, leaves reviews and manages a wishlist.
+  \item \textbf{Teacher}: creates and updates courses, uploads lectures and media, views enrolled students, responds to Q\&A and manages coupons for their courses.
+  \item \textbf{Admin / Platform operator}: moderates content, reviews payments and orders, manages users and site-wide settings through the admin dashboard.
 \end{itemize}
 
-\section{Les patrons de conception utilisÃ©s} 
-    \subsection{Patrons de crÃ©ation}
-        \subsubsection{Patron Singleton}
-        Singleton est un patron de conception de crÃ©ation qui garantit que lâ€™instance dâ€™une classe nâ€™existe quâ€™en un seul exemplaire, tout en fournissant un point dâ€™accÃ¨s global Ã  cette instance.\cite{webArticle16}:
+\subsection{Key functional capabilities}
 
-        On utilise ce patron souvent en utilisant spring boot lors de l'injection de dÃ©pendance avec l'annotation Autowired ou bien Inject.
-    
-    \subsection{Patrons structurels}    
-        \subsubsection{Patron Proxy}
-        Le Proxy est un patron de conception structurel qui vous permet dâ€™utiliser un substitut pour un objet. Elle donne le contrÃ´le sur lâ€™objet original, vous permettant dâ€™effectuer des manipulations avant ou aprÃ¨s que la demande ne lui parvienne.
-        Ce patron de conception vous propose de crÃ©er une classe Proxy qui a la mÃªme interface que lâ€™objet du service original. Vous passez ensuite lâ€™objet procuration Ã  tous les clients de lâ€™objet original. Lors de la rÃ©ception dâ€™une demande dâ€™un client, la procuration crÃ©e lâ€™objet du service original et lui dÃ©lÃ¨gue la tÃ¢che.\cite{webArticle18}:
-        
-        Nous avons utilisÃ© ce patrons plusieurs fois dans la partie backend avec les classes DTO Data Transfer Object.
+The LMS implements the following high-level features (examples taken from the application):
+\begin{itemize}[label=\textbullet,font=\normalsize]
+  \item User registration and JWT-based authentication (login/refresh/forgot-password flows).
+  \item Course categories, course listing, course detail pages and search functionality.
+  \item Curriculum management: sections and lectures with support for media uploads (video, files).
+  \item Shopping cart, order creation and checkout with Stripe and PayPal integrations, coupon application and order history.
+  \item Student-specific APIs: enrollments, student-specific course detail and progress, notes and reviews.
+  \item Teacher-specific APIs: course creation/update, coupon management, notifications and earnings reports.
+  \item File upload endpoint for media and video processing on the backend.
+\end{itemize}
 
-    \subsection{Patrons comportementaux}
-        \subsubsection{Patron Ã‰tat}
-        Ã‰tat est un patron de conception comportemental qui permet de modifier le comportement dâ€™un objet lorsque son Ã©tat interne change. Lâ€™objet donne lâ€™impression quâ€™il change de classe.\cite{webArticle17}:
-
-        Nous avons utilisÃ© ce patrons lors du traitements des demandes (congÃ©s ,sorties ,achats) chacun de ces objets possÃ©de un Ã©tat et il change de comportement dÃ¨s qu'on change son Ã©tat.
-    
-    \subsection{Patron d'architecture}
-        \subsubsection{Patron Data Access Object DAO }
-        Câ€™est un patron qui permet dâ€™encapsuler et de centraliser lâ€™accÃ¨s Ã  la base de donnÃ©es et
-        le lien entre lâ€™application et le systÃ¨me de stockage. Le plus grand avantage de ce patron est
-        quâ€™il permet de mieux maitriser les changements susceptibles dâ€™Ãªtre opÃ©rÃ©s sur le systÃ¨me de
-        stockage Ã  savoir une migration dâ€™un systÃ¨me Ã  un autre. Un objet DAO fournit des opÃ©rations basiques (CRUD) comme la lecture, la mise Ã  jour, la crÃ©ation, lâ€™affichage et la suppression
-        dâ€™une entitÃ© sans exposer les dÃ©tails de la base de donnÃ©es.
-        
-        \subsubsection{Patron Dependency Injection DI}
-        L'injection de dÃ©pendance est un design pattern qui permet de solutionner la problÃ©matique de communication entre les classes. il minimise les dÃ©pendances entre les composants et les modifier facilement, lâ€™architecture est ainsi faiblement couplÃ©e
-        et le potentiel de rÃ©utilisation de ces composants est plus Ã©levÃ©. Lâ€™objet dÃ©pendant nâ€™a plus
-        besoin de chercher et instancier le composant logiciel dont il dÃ©pend pour faire son travail, il suit de dÃ©crire son interface et lâ€™injecteur dÃ©cide quel composant concret satisfait les exigences et lâ€™injecte dans lâ€™objet dÃ©pendant. Dans une architecture classique, lâ€™objet dÃ©pendant dÃ©cide lui-mÃªme quelles classes concrÃ¨tes il va utiliser. Dans notre cas, nous avons utilisÃ© ce patron pour gÃ©rer les dÃ©pendances entre les objets dâ€™accÃ¨s aux donnÃ©es et les objets mÃ©tiers et entre les objets mÃ©tiers et les objets service de hauts niveaux.
-            
-
-\section{Maquette du projet} 
-    Dans cette partie nous allons prÃ©senter en premier lieu la maquette de l'application qui est rÃ©alisÃ©e avec Adobe Xd par le designer de Tek-Up et en second lieu le schÃ©ma de navigation de l'application.
-    
-    \subsection{Captures des interfaces de maquette}
-    
-    La figure \textbf{\ref{fig:login}} reprÃ©sente l'interface login de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.7\columnwidth]{}}
-\caption{Interface "S'authentifier"}
-\label{fig:login}
-\end{figure}
-
-    La figure \textbf{\ref{fig:dashboard}} reprÃ©sente l'interface dashboard de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.7\columnwidth]{}}
-\caption{Interface "Dashboard"}
-\label{fig:dashboard}
-\end{figure}
-
-
-
-
-La figure \textbf{\ref{fig:presence}} reprÃ©sente l'interface du pointage dont laquelle un utilisateur peut marquer sa prÃ©sence et il trouve aussi une liste de sa frÃ©quentation pour cette semaine lÃ .
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.7\columnwidth]{}}
-\caption{Interface "PrÃ©sence"}
-\label{fig:presence}
-\end{figure}
-
-
-\subsection{SchÃ©ma de navigation}
-Le SchÃ©ma de navigation est une technique visuelle qui nous aiderons Ã  comprendre le contenu dâ€™une application.
-    \subsubsection{SchÃ©ma de navigation de l'application}
-        La figure \textbf{\ref{fig:SchNavGlobal}} reprÃ©sente le schÃ©ma de navigation global de l'application il nous montre toutes les pages de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\\includegraphics[width=0.9\columnwidth]{}}
-\caption{SchÃ©ma de navigation de l'application}
-\label{fig:SchNavGlobal}
-\end{figure}
-        
-    \subsubsection{SchÃ©ma de navigation par acteur}
-    Les figures suivantes reprÃ©sentent les schÃ©mas de navigation par acteurs selon la spÃ©cification des besoins qu'on l'a rÃ©alisÃ© au dÃ©but de ce chapitre.
-        \begin{itemize}[label=\textbullet]
-
-            \item \textbf{Stagiaire : }
-    
-                 La figure \textbf{\ref{fig:schema de navigationSt}} reprÃ©sente le schÃ©ma de navigation du Stagiaire.
-                
-                \begin{figure}[H]
-                \centering
-                \frame{\\includegraphics[width=0.9\columnwidth]{}}
-                \caption{SchÃ©ma de navigation dâ€™un stagiaire}
-                \label{fig:schema de navigationSt}
-                \end{figure}
-
-            \item \textbf{Consultant : }
-            
-                La figure \textbf{\ref{fig:schema de navigationCons}} reprÃ©sente le schÃ©ma de navigation du consultant.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\\includegraphics[width=0.9\columnwidth]{}}
-                \caption{SchÃ©ma de navigation d'un consultant}
-                \label{fig:schema de navigationCons}
-                \end{figure}
-
-            \item \textbf{EmployÃ© : }
-                
-                La figure \textbf{\ref{fig:schema de navigationEmp}} reprÃ©sente le schÃ©ma de navigation de l'employÃ©.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\\includegraphics[width=0.9\columnwidth]{}}
-                \caption{SchÃ©ma de navigation dâ€™un employÃ©}
-                \label{fig:schema de navigationEmp}
-                \end{figure}
-            
-            \item \textbf{responsable RH :}
-
-                La figure \textbf{\ref{fig:schema de navigationRh}} reprÃ©sente le schÃ©ma de navigation du responsable Rh.
-                
-                \begin{figure}[H]
-                \centering
-                \frame{\\includegraphics[width=0.9\columnwidth]{}}
-                \caption{SchÃ©ma de navigation dâ€™un responsable RH}
-                \label{fig:schema de navigationRh}
-                \end{figure}
-                
-            \item \textbf{Manager :}
-            
-                La figure \textbf{\ref{fig:schema de navigationMan}} reprÃ©sente le schÃ©ma de navigation du manager.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\\includegraphics[width=0.9\columnwidth]{}}
-                \caption{SchÃ©ma de navigation dâ€™un manager}
-                \label{fig:schema de navigationMan}
-                \end{figure}
- 
-                            
-            \end{itemize}
-
-\section{DifficultÃ©s rencontrÃ©es} 
-
-La principales difficultÃ© rencontrÃ©e c'est que nous avons prÃ©parÃ© la partie Front-end Ã  partir du zÃ©ro en se basant sur les maquettes fournies par l'Ã©quipe de design de Tek-Up.
-En effet la rÃ©alisation de chaque sprint se divise en trois parties partie Back-end, intÃ©gration de la maquette en HTML et CSS et la partie Front-end ce qui engendre une perte de temps considÃ©rable
-
-
-
-\section{Environnement de travail} 
-
-
-\subsection{Outils de gestion de projet}
+\subsection{Non-functional requirements}
 
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{Bitbucket }
- 
- Bitbucket est un service d'hÃ©bergement Web et de gestion du dÃ©veloppement logiciel,planification, collaboration autour du code, et intÃ©gration. il s'appuie sur le logiciel de gestion de version dÃ©centralisÃ©e Git.\cite{webArticle4}
-
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo Bitbucket}
-\label{fig:Bitbucket}
-\end{figure}
-
-
-\item \textbf{Jira Software } 
-
- Jira est une plateforme de gestion de projet destinÃ©e au dÃ©veloppement logiciel. Elle permet de prÃ©parer, matÃ©rialiser et suivre les dÃ©veloppements des teams SCRUM.\cite{webArticle5}
- 
- la figure \ref{fig:jira} montre une capture de jira qui contient les tÃ¢ches terminÃ©es et les tÃ¢ches en cours de sprint 1.
-
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo Bitbucket}
-\label{fig:jira}
-\end{figure}
- 
-
-
-\item \textbf{Discord } 
-
- Discord permet aux membres de l'Ã©quipe de discuter entre eux en tÃªte-Ã -tÃªte ou en groupe via un serveur. Nous l'utilisons pour envoyer des messages directs, passer des appels vidÃ©o, discuter avec la voix et mÃªme partager lÃ©cran.\cite{webArticle6}
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo Discord}
-\label{fig:discord}
-\end{figure}
-
+  \item \textbf{Security}: JWT authentication, role-based access control and token blacklisting for secure session management.
+  \item \textbf{Scalability}: Separation between frontend and API enables horizontal scaling of API servers and static hosting of the frontend.
+  \item \textbf{Performance}: media uploads are handled asynchronously and large files are stored on the server file system (or object storage in production).
+  \item \textbf{Maintainability}: clear modular structure for frontend components and backend Django apps facilitates incremental development and testing.
 \end{itemize}
 
+\section{Architecture overview}
 
-\subsection{Framework de dÃ©veloppement et de tests}
-
+The application follows a standard client-server architecture:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{Angular }
-  
- Angular est un framework open source, Ã©crit en JavaScript, qui permet la crÃ©ation d'applications Web, en particulier les Â«applications Ã  une seule pageÂ»: Des applications Web accessibles via une seule page Web, rendant l'expÃ©rience utilisateur plus fluide et Ã©vitant les pages ChargÃ©es chaque nouveau action.\cite{webArticle7}
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo Angular}
-\label{fig:angular}
-\end{figure}
-
-
-
-  \item\textbf{Spring Boot }
- 
- Spring est un Framework, qui fournit un modÃ¨le complet de programmation et de configuration pour les applications d'entreprise modernes basÃ©es sur Java, sur tout type de plate-forme de dÃ©ploiement.\cite{webArticle8}
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo springBoot}
-\label{fig:springBoot}
-\end{figure}
-
- \item\textbf{Postman }
- 
-Postman est une solution pour interroger ou tester webservices et API. Il permet de construire et dâ€™exÃ©cuter des requÃªtes HTTP, de les stocker dans un historique afin de pouvoir les rejouer, mais surtout de les organiser en Collections. Nous avons utilisÃ© cet outil pour tester le 
-fonctionnement de la partie Backend.\cite{webArticle9}
- 
-\begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo postman}
-\label{fig:postman}
-\end{figure}
-
-
-
+  \item \textbf{Frontend}: React (Vite), using libraries such as Axios for API requests, CKEditor for rich text fields, Bootstrap for layout and Zustand for lightweight state management.
+  \item \textbf{Backend API}: Django 4.2 and Django REST Framework exposing JSON endpoints secured with Simple JWT. The backend includes app modules for authentication, core course models, user profiles and API logic.
+  \item \textbf{Payments}: Stripe and PayPal integrations handled server-side; the backend exposes endpoints for checkout, payment success webhooks and coupon application.
+  \item \textbf{Storage}: Development uses SQLite (db.sqlite3) and the local media folder for uploaded content; production deployments should move to a relational database (Postgres) and object storage for media.
 \end{itemize}
 
+\section{API highlights}
 
-
-\subsection{SystÃ¨me de gestion de base de donnÃ©es}
-
+The backend exposes REST endpoints to manage authentication, courses and orders. Representative endpoints include:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{MySQL Database }
-  
-MySql est un systÃ¨me de gestion de bases de donnÃ©es relationnelles (SGBDR). Ce systÃ¨me est distribuÃ© sous une double licence GPL(licence publique gÃ©nÃ©rale) et propriÃ©taire. Il est parmi les  logiciels de gestion de base de donnÃ©es les plus utilisÃ©s au monde.\cite{webArticle10}
- 
- \begin{figure}[H]
-\centering
-\\includegraphics[width=0.3\columnwidth]{}
-\caption{Logo MySql}
-\label{fig:MySql}
-\end{figure}
- 
+  \item `user/token/`, `user/token/refresh/`, `user/register/` — authentication and user management.
+  \item `course/course-list/`, `course/course-detail/<slug>/`, `course/search/` — course discovery.
+  \item `course/cart/`, `order/create-order/`, `payment/stripe-checkout/<order_oid>/` — cart and payment flows.
+  \item `student/course-detail/<user_id>/<enrollment_id>/` and `teacher/course-create/` — student and teacher specific resources.
 \end{itemize}
 
+\section{Planning and releases}
 
-
-
-\section*{Conclusion}
-La phase de spÃ©cification des besoins est une phase trÃ¨s importante dans le cycle de vie dâ€™un projet, car elle offre une vue plus claire du systÃ¨me et des principales caractÃ©ristiques Ã  atteindre. Par consÃ©quent, nous avons introduit le backlog produit et la planification des releases pour passer Ã  la phase de conception.
-
-
-
-
-
-
-
-
+The project followed an iterative approach with three releases (each including two sprints) delivering the features described in later chapters.
 

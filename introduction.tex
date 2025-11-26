@@ -1,41 +1,26 @@
-﻿\chapter*{Introduction gÃ©nÃ©rale}
-\addcontentsline{toc}{chapter}{Introduction gÃ©nÃ©rale} % to include the introduction to the table of content
-\markboth{Introduction gÃ©nÃ©rale}{} %To redefine the section page head
+﻿\chapter*{Introduction generale}
+\addcontentsline{toc}{chapter}{Introduction generale} % to include the introduction to the table of content
+\markboth{Introduction generale}{} %To redefine the section page head
 
-Lâ€™essor de lâ€™informatique et des technologies numÃ©riques a profondÃ©ment bouleversÃ© nos sociÃ©tÃ©s et, transcende lâ€™ensemble des activitÃ©s humaines. 
-De nos jours, la majoritÃ© de ces activitÃ©s a Ã©tÃ© simplifiÃ©e et automatisÃ©e grÃ¢ce Ã  lâ€™informatique. 
-Ce phÃ©nomÃ¨ne, parfois qualifiÃ© de Â« rÃ©volution numÃ©rique Â», permet aujourdâ€™hui le traitement et lâ€™Ã©change dâ€™informations entre les individus, grÃ¢ce Ã  des logiciels et des rÃ©seaux informatiques.
+This report documents the design and implementation of a Learning Management System (LMS) developed during the internship period. The LMS provides a web-based platform for creating, publishing and selling online courses, managing users (instructors and students), handling enrollments, and processing payments.
 
-Ainsi, les entreprises du monde entier utilisent aujourdâ€™hui des logiciels de gestion, leur permettant dâ€™effectuer des tÃ¢ches complexes rapidement. 
+The implementation is divided into a React-based frontend (built with Vite) and a Django REST Framework backend. The application implements authentication using JWT, course and curriculum management, a shopping cart and checkout flow with Stripe and PayPal integrations, content upload (including video support), discussion threads, reviews, wishlist, and an administrative dashboard used by platform operators.
 
-Câ€™est dans ce contexte que le projet Â« LMS Â» a vu le jour. Ce projet propose une solution de Learning Management System, utilisable en tout lieu. 
-Le projet Â« LMS Â» consiste en une application, permettant de mettre Ã  disposition des clients (les entreprises) un outil de gestion de leurs ressources humaines (RH), prÃ©sentant des fonctionnalitÃ©s diverses et utiles en toutes circonstances. 
-
-Lâ€™objectif de cette application est, dâ€™une part, de simplifier et dâ€™accÃ©lÃ©rer le processus RH, et dâ€™autre part, dâ€™amÃ©liorer la communication entre les employÃ©s (la communication au sein dâ€™une mÃªme entreprise) en la rendant plus fluide et flexible. 
-
-Lâ€™entreprise de services informatiques Tek-Up, a Ã  cÅ“ur ces valeurs dâ€™agilitÃ© et dâ€™amÃ©lioration des processus RH, et a donc acceptÃ© dâ€™allouer toute la logistique nÃ©cessaire Ã  la rÃ©alisation de ce projet.
-
-
-Le prÃ©sent rapport sera organisÃ© de la maniÃ¨re suivante :
-
+The internship was supervised by Aicha ben Jrad and carried out as part of the curriculum of Tek-Up University. The main objectives were:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-
-\item Dans un premier chapitre, nous prÃ©senterons le cadre du projet.Il sera constituÃ© dâ€™une prÃ©sentation du contexte gÃ©nÃ©ral ainsi que dâ€™une Ã©tude de lâ€™existant, rÃ©alisÃ©e Ã  partir de trois projets similaires. Ce premier chapitre contiendra aussi une prÃ©sentation de la mÃ©thode de gestion de projet et de la mÃ©thode de conception que nous avons choisi dâ€™adopter. 
-
-\item Le second chapitre prÃ©sentera une analyse et une spÃ©cification des besoins, fonctionnels et non fonctionnels, rÃ©alisÃ©s Ã  partir de lâ€™identification des acteurs de lâ€™application. Il exposera aussi le diagramme de cas dâ€™utilisation globale, ainsi que le diagramme de classes de lâ€™application, la rÃ©partition des releases et lâ€™architecture de lâ€™application. 
-
-
-\item Le troisiÃ¨me chapitre portera sur la Release 1 : Â« Gestion de lâ€™entreprise et des comptes Â», qui a consistÃ© en la rÃ©alisation dâ€™un Sprint 1 portant sur la crÃ©ation du compte de lâ€™entreprise, compte du Manager et la gestion des postes et des dÃ©partements, ainsi que la rÃ©alisation dâ€™un Sprint 2, portant sur la gestion des utilisateurs, lâ€™authentification et la gestion des rÃ´les.
-    
-\item Dans un quatriÃ¨me chapitre, nous prÃ©senterons la Release 2, Â« Gestion dâ€™activitÃ© de ressources humaines Â», qui comprend le Sprint 3, portant sur la gestion des demandes de congÃ© et des demandes dâ€™autorisation de sortie, et le Sprint 4, portant sur la gestion de prÃ©sence, le pointage et le compte-rendu dâ€™activitÃ©.
-
-
-\item Enfin, dans un cinquiÃ¨me et dernier chapitre, nous prÃ©senterons la Release 3, Â« Gestion dâ€™achat et de dÃ©penses Â», comprenant le Sprint 5, portant sur la gestion des demandes dâ€™achats, la gestion des fournisseurs et la gestion des dÃ©penses pÃ©riodiques, ainsi que le Sprint 6, portant sur la rÃ©alisation d'un Dashboard de suivi des dÃ©penses et de la prÃ©sence.
-
+  \item Implement a full-stack LMS with clear separation between frontend and API backend.
+  \item Provide secure user authentication (students and teachers) and role-based features.
+  \item Support course creation, curriculum management, video uploads and course consumption.
+  \item Implement a shopping and payment flow with coupons and order tracking.
+  \item Deliver an admin interface for content moderation and operational tasks.
 \end{itemize}
 
-
-
-
-
+The report is organised as follows:
+\begin{itemize}[label=\textbullet,font=\normalsize]
+  \item Chapter 1: Project context and motivation, study of similar systems, and the overall project methodology.
+  \item Chapter 2: Requirements analysis and specification (actors, functional and non-functional requirements, system architecture and planning).
+  \item Chapter 3: Release 1 — user and account management, authentication and basic course model implementation.
+  \item Chapter 4: Release 2 — course consumption features: curriculum, lectures, student activity and interaction (Q&A, reviews), and course purchasing flows.
+  \item Chapter 5: Release 3 — payments, orders, teacher features (course creation and management), and the administrative dashboard.
+\end{itemize}
 
