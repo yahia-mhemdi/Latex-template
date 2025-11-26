@@ -1,565 +1,63 @@
-
-\chapter{Analyse et spécification des besoins}
-% Une section
-
-% Exemple d'une section qui porte une référence à une bibliographie
-% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas où il y a une référence dans la table des matières.
+﻿\chapter{Analyse et specification des besoins}
 
 \section*{Introduction}
 
-Dans ce chapitre, nous présentons une analyse des besoins fonctionnels et non fonctionnels de notre applications en précisant les différents acteurs de notre système, le diagramme de classe et la planification de travail. Nous allons ainsi présenté l'architecture et les maquettes utilisées.
+This chapter presents a detailed analysis of the functional and non-functional requirements of the LMS. It identifies system actors, summarises the main use cases, and describes the technical architecture and planning adopted during the internship.
 
-\section{Spécification des besoins}
+\section{Functional requirements}
 
-    \subsection{Spécification des besoins fonctionnels}
-        \subsubsection{Identification des acteurs}
-        Dans cette partie, nous allons commencer par définir  les différents acteurs qui contribuent dans notre application ainsi que la définition de leurs rôles.
+\subsection{Actors and roles}
 
-Dans l’application XHRM, les acteurs sont : Manager, Responsable RH, Employé, Consultant, Stagiaire. Il faut bien noter que chaque rôle possède les permissions du rôle précédent, par exemple le consultant peut faire tout ce qu'un stagiaire peut faire et il possède de plus les permissions d'un consultant et l'employé peut faire tout ce qui peut un consultant et un stagiaire et il a davantage de permissions.
-
-
-
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{Stagiaire}
-C'est une personne saisonnière donc son rôle va lui permet d'avoir le moindre de permissions tels que marquer la présense et la gestion du profil...
-
-\item \textbf{Consultant :}
-C’est un  prestataire de services de conseil et ce n'est pas un élément permanent dans l'entreprise .Il a plus de permissions que le stagiaire mais son rôle reste restreint.
-
-\item \textbf{Employé}
-C'est une personne permanente dans l'entreprise ce qu'il permet d'avoir plus des permissions que les deux rôles précédents tels que  passer une demande de congé ou bien demande d'achat.
-
-\item \textbf{Responsable RH :}
-C’est qui conseille le personnel des entreprises et coordonne toutes les activités dans divers domaines des ressources humaines donc son rôle lui permet d'accèder aux informations des employés de leur entreprise ainsi qu'il peut répondre aux demandes de sortie et de congé.
-
-\item \textbf{Manager :}
-C’est le super admin le propriétaire de l'entreprise, le rôle le plus important.Il supervise et dirige l'entreprise son rôle lui donne l'accés à tous les modules de l'application il peut aussi gérer les rôles des autres utilisateurs.
-
-\end{itemize}
-
-        \subsubsection{Spécification des besoins fonctionnels par acteur}
-            
-
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{Stagiaire :}
-                  
-                    \begin{itemize}
-                        \item Gérer son profil.
-                        \item Consulter son dashboard.
-                        \item Marquer l’heure d’entrée.
-                        \item Marquer l’heure de sortie.
-                        \item Consulter sa liste de pointage.
-                        \item Rechercher un utilisateur.
-                        \item Consulter son dashboard.
-                        \item Demander une autorisation de sortie.
-                        \item consulter l’équipe de son département.
-                     \end{itemize} 
-
-                    
-\item \textbf{Consultant :}
-                
-                    \begin{itemize}
-                        \item Consulter son compte rendu d'activité.
-                        \end{itemize}
-                         
-\item \textbf{Employé :}
-                 
-                    \begin{itemize}
-                        \item Demander un congé.
-                        \item Demander un achat.
-                     \end{itemize}
-                     
-\item \textbf{Responsable RH :}
-                   
-                    \begin{itemize}
-                        \item Gérer les comptes des employés.
-                        \item Consulter les absences et les présences.
-                        \item Gérer les congés.
-                        \item Gérer les autorisations de sortie.
-                        \item Consulter les équipe de tous les départements.
-                     \end{itemize}
-
-\item \textbf{Manager :}
-                    \begin{itemize}
-                        \item Gérer les rôles des utilisateurs.
-                        \item Gérer les demandes d’achat.
-                        \item Gérer les fournisseurs. 
-                        \item Gérer les dépenses périodiques.
-                        \item Gérer le compte de son entreprise.
-                    \end{itemize}          
-
-\end{itemize}
-        \newpage
-        \subsubsection{Diagramme de cas d’utilisation global}
-            \begin{figure}[H]
-            \centering
-            \includegraphics[width=1\columnwidth]{img/useCaseGlobal.png}
-            \caption{Diagramme cas d'utilisation global}
-            \label{fig:diagramme cas utilisation global}
-            \end{figure}
-        Notons qu'un utilisateur peut être un consultant, un stagiaire, un employé, un manager ou un responsable ressources humaines.
-
-    \subsection{Spécification des besoins non fonctionnels}
-La spécification des besoins ne se limite pas à l'identification des acteurs et à la définition des besoins fonctionnels. D'autres limites doivent être définies pour faciliter l'utilisation, afin de mieux comprendre la structure et la fonctionnalité et assurer une bonne expérience utilisateur. 
-
-Étant donné que notre application Web est destinée aux employés, ses interfaces doivent être ergonomiques pour faciliter la navigation sur le site et pour que l'utilisateur comprenne les caractéristiques et la structure.
-
-\begin{itemize}[label=\textbullet]
-\item \textbf{La navigation (l’expérience utilisateur) :}
-Notre application devrait fournir à l'utilisateur le confort de navigation (un bon système de navigation), permettant de minimiser l'efforts pour atteindre la partie qu'il cherche. Ce dernier doit s'éloigner en un seul clic et revenir facilement à la section précédente ou dans la position de départ grâce à un fil d’Ariane (SideBar).
-
-\item \textbf{L’accessibilité (responsivité) :}
-L'accès à l'application couvre un grand nombre de visiteurs avec différents matériels. Cette accessibilité est principalement liée à la taille et à la résolution de l'écran. Pour ce faire, vous devez vous assurer une expérience de lecture idéale pour l'utilisateur, quelle que soit la gamme d'appareil grâce à la responsive design.
-
-\item \textbf{L’interactivité :}
-L'échange entre l'application et l'utilisateur doit être simple et facile. 
-Le but principal de ce critère est de surmonter les obstacles afin de garantir une bonne étape de découverte jusqu'à la construction d'une relation entre l'employé et l'administrateur.
-
-\item \textbf{L’harmonie et la clarté :}
-Respecter la charte graphique dans notre application est essentiel pour l'harmonie, la cohérence graphique, la visibilité et la lisibilité des textes et du contenu de chaque page.
-
-\item \textbf{La rapidité :}
-Le système doit agir rapidement dans les différentes demandes envoyées par les utilisateurs.
-
-\item \textbf{La sécurité et l’intégrité :}
+The system defines the following primary actors:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-\item Le système garantit le contrôle d'accès. 
-\item Chaque utilisateur ne contribue qu'aux pages autorisées par son rôle.
-\end{itemize}
-\end{itemize}
-
-
-
-\section{Diagramme de classe} 
-
-Ci-dessous dans la figure \ref{fig:diagrammeclasseglobal}, nous représentons le diagramme de classe global de notre application. Nous détaillons ses classes dans chaque sprint.
-
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.9\columnwidth]{GlobalClassDiagram}}
-\caption{Diagramme de classe global}
-\label{fig:diagrammeclasseglobal}
-\end{figure}
-
-
-\section{Planification de travail} 
- 
-    \subsection{Répartition des releases}
-    
-        \begin{longtable}{|m{2cm}|m{13cm}|}
-
-        
-                \hline 
-                    \textbf{Release ID} & \textbf{Nom du Sprint} \\
-                \hline
-                \endhead
-                 \endfoot
-                  \endlastfoot
-                \hline 
-                    1
-                    & 
-                  \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item Sprint 1:Gestion de l’entreprise.
-                        \item Sprint 2:Gestion des utilisateurs et authentification.
-                    \end{itemize}
-                    \\
-                \hline 
-                    2
-                    & 
-                    \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item sprint 3:Module gestion des Congés et des permissions des sorties
-                        \item Sprint 4:Module gestion de présence et Compte rendu d'activité 
-                        
-                    \end{itemize}
-                    \\
-                \hline 
-                    3
-                    & \begin{itemize}[label=\textbullet,font=\normalsize]
-                        \item Sprint 5: Module gestion d'achats et Dépenses.
-                        \item Sprint 6: Réalisation du Dashboad.
-                      \end{itemize}
-                    \\
-                \hline 
-            \captionsetup{justification=centering,margin=2cm}
-            \caption{Répartition des releases}
-            \label{tab:Répartition des releases}
-               
-            \end{longtable}
-
-
-    \subsection{Planification des sprints}
-    La figure \ref{fig:Planification des sprints} représente le diagramme de Gantt illustrant la répartition du travail tout au long de la période de stage.
-            
-        \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/gantt.png.png}}
-
-        % \frame{\includegraphics[width=1\columnwidth]{img/Gantt.png}}
-        \caption{Planification des sprints}
-        \label{fig:Planification des sprints}
-        \end{figure}
-
-    
-\section{Architecture de l’application} 
-    \subsection{Architecture logique}
-
-L’architecture logique de notre application est divisée en deux parties, une partie Back-end et une partie Front-end.
-
-La partie Front-end est basée sur le fameux Framework modulaire Angular. Chaque module est
-composé d’un composant contenant la logique de base de la page et un template qui traite de la vue de l'application.
-Un composant injecte la couche service, une couche d'abstraction qui permet de gérer le logique métier
-de l’application. Il assure la communication avec les services du backend, via les requêtes HTTP.
-Les données échangées entre la partie Front-end et la partie Back-end sont de type JSON.
-
-La partie Back-end est basé sur le Framework Spring boot. Son conteneur constitue le cœur de ce
-Framework. Il obtient ses instructions sur les objets à instancier, configurer et assembler en lisant les
-métadonnées de configuration fournies.
-
-La figure \ref{fig:archispring} représente l’architecture logique de Spring-Boot
-
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.9\columnwidth]{archiLogS}}
-\caption{Architecture logique Back-End (Spring-Boot)}
-\label{fig:archispring}
-\end{figure}
-
-
-\subsubsection{Architecture logique d' Angular}
-Angular est un Framework pour créer la partie Front End des applications web en utilisant HTML et JavaScript ou TypeScript compilé en JavaScript.Une application Angular se compose de \cite{webArticle15}:
-
-\begin{itemize}
-        \item Un à plusieurs modules dont un est principal.
-        \item Chaque module peut inclure :
-            \begin{itemize}[label=\textbullet]
-            \item \textbf{Des composant web :}
-                             La partie visible de l'application Web (IHM)
-            \item \textbf{Des services pour la logique applicative :}
-                             Les composants peuvent utiliser les services via le principe de l’injection des dépendances.
-            \item \textbf{Les directives :}
-                             un composant peut utiliser des directives
-            \item \textbf{Les pipes :}
-                             utilisés pour formater l’affichage des données dans els composants.
-            \end{itemize}
-                        
-\end{itemize} 
-
-
-
-
-
-
-La figure \textbf{\ref{fig:archiang}} représente l’architecture logique d'Angular :
-
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.9\columnwidth]{archiLogAngular}}
-\caption{Architecture logique Front-End (Angular)\cite{webArticle14}}
-\label{fig:archiang}
-\end{figure}
-
-    
-    \subsection{Architecture physique}
-
-Notre application repose sur une architecture 3-tiers.
-La figure \ref{fig:archiPhy}, représente les interactions entre les différents niveaux, ainsi que l'architecture physique que nous avons adopté
-
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.9\columnwidth]{archiPhy}}
-\caption{Architecture physique}
-\label{fig:archiPhy}
-\end{figure}
-
-
-Notre application est divisée en quatre couches :
-\begin{itemize}[label=\textbullet]
-
-\item \textbf{La couche présentation des données } contient les composants graphiques de l'application et tous les interfaces.
-
-\item \textbf{Le REST API } qui garantit le lien entre les composants graphiques et les composants métiers dans notre application, En s'appuyant sur le protocole HTTP hors ligne, les utilisateurs peuvent simplement y accéder via un autre élément du SI et des applications clientes.
-
-\item \textbf{La couche métier des données } correspond à la mise en place de l'ensemble de la logique applicative et des règles de gestion.
-
-\item \textbf{La couche accès aux données } correspond aux données qui sont destinées à être conservées dans la base de données.
+  \item \textbf{Student}: registers, enrolls in courses, accesses lectures, asks questions, leaves reviews and manages a wishlist.
+  \item \textbf{Teacher}: creates and updates courses, uploads lectures and media, views enrolled students, responds to Q\&A and manages coupons for their courses.
+  \item \textbf{Admin / Platform operator}: moderates content, reviews payments and orders, manages users and site-wide settings through the admin dashboard.
 \end{itemize}
 
-\section{Les patrons de conception utilisés} 
-    \subsection{Patrons de création}
-        \subsubsection{Patron Singleton}
-        Singleton est un patron de conception de création qui garantit que l’instance d’une classe n’existe qu’en un seul exemplaire, tout en fournissant un point d’accès global à cette instance.\cite{webArticle16}:
+\subsection{Key functional capabilities}
 
-        On utilise ce patron souvent en utilisant spring boot lors de l'injection de dépendance avec l'annotation Autowired ou bien Inject.
-    
-    \subsection{Patrons structurels}    
-        \subsubsection{Patron Proxy}
-        Le Proxy est un patron de conception structurel qui vous permet d’utiliser un substitut pour un objet. Elle donne le contrôle sur l’objet original, vous permettant d’effectuer des manipulations avant ou après que la demande ne lui parvienne.
-        Ce patron de conception vous propose de créer une classe Proxy qui a la même interface que l’objet du service original. Vous passez ensuite l’objet procuration à tous les clients de l’objet original. Lors de la réception d’une demande d’un client, la procuration crée l’objet du service original et lui délègue la tâche.\cite{webArticle18}:
-        
-        Nous avons utilisé ce patrons plusieurs fois dans la partie backend avec les classes DTO Data Transfer Object.
+The LMS implements the following high-level features (examples taken from the application):
+\begin{itemize}[label=\textbullet,font=\normalsize]
+  \item User registration and JWT-based authentication (login/refresh/forgot-password flows).
+  \item Course categories, course listing, course detail pages and search functionality.
+  \item Curriculum management: sections and lectures with support for media uploads (video, files).
+  \item Shopping cart, order creation and checkout with Stripe and PayPal integrations, coupon application and order history.
+  \item Student-specific APIs: enrollments, student-specific course detail and progress, notes and reviews.
+  \item Teacher-specific APIs: course creation/update, coupon management, notifications and earnings reports.
+  \item File upload endpoint for media and video processing on the backend.
+\end{itemize}
 
-    \subsection{Patrons comportementaux}
-        \subsubsection{Patron État}
-        État est un patron de conception comportemental qui permet de modifier le comportement d’un objet lorsque son état interne change. L’objet donne l’impression qu’il change de classe.\cite{webArticle17}:
-
-        Nous avons utilisé ce patrons lors du traitements des demandes (congés ,sorties ,achats) chacun de ces objets posséde un état et il change de comportement dès qu'on change son état.
-    
-    \subsection{Patron d'architecture}
-        \subsubsection{Patron Data Access Object DAO }
-        C’est un patron qui permet d’encapsuler et de centraliser l’accès à la base de données et
-        le lien entre l’application et le système de stockage. Le plus grand avantage de ce patron est
-        qu’il permet de mieux maitriser les changements susceptibles d’être opérés sur le système de
-        stockage à savoir une migration d’un système à un autre. Un objet DAO fournit des opérations basiques (CRUD) comme la lecture, la mise à jour, la création, l’affichage et la suppression
-        d’une entité sans exposer les détails de la base de données.
-        
-        \subsubsection{Patron Dependency Injection DI}
-        L'injection de dépendance est un design pattern qui permet de solutionner la problématique de communication entre les classes. il minimise les dépendances entre les composants et les modifier facilement, l’architecture est ainsi faiblement couplée
-        et le potentiel de réutilisation de ces composants est plus élevé. L’objet dépendant n’a plus
-        besoin de chercher et instancier le composant logiciel dont il dépend pour faire son travail, il suit de décrire son interface et l’injecteur décide quel composant concret satisfait les exigences et l’injecte dans l’objet dépendant. Dans une architecture classique, l’objet dépendant décide lui-même quelles classes concrètes il va utiliser. Dans notre cas, nous avons utilisé ce patron pour gérer les dépendances entre les objets d’accès aux données et les objets métiers et entre les objets métiers et les objets service de hauts niveaux.
-            
-
-\section{Maquette du projet} 
-    Dans cette partie nous allons présenter en premier lieu la maquette de l'application qui est réalisée avec Adobe Xd par le designer de XtendPlex et en second lieu le schéma de navigation de l'application.
-    
-    \subsection{Captures des interfaces de maquette}
-    
-    La figure \textbf{\ref{fig:login}} représente l'interface login de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.7\columnwidth]{page1}}
-\caption{Interface "S'authentifier"}
-\label{fig:login}
-\end{figure}
-
-    La figure \textbf{\ref{fig:dashboard}} représente l'interface dashboard de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.7\columnwidth]{page2}}
-\caption{Interface "Dashboard"}
-\label{fig:dashboard}
-\end{figure}
-
-
-
-
-La figure \textbf{\ref{fig:presence}} représente l'interface du pointage dont laquelle un utilisateur peut marquer sa présence et il trouve aussi une liste de sa fréquentation pour cette semaine là.
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.7\columnwidth]{page5}}
-\caption{Interface "Présence"}
-\label{fig:presence}
-\end{figure}
-
-
-\subsection{Schéma de navigation}
-Le Schéma de navigation est une technique visuelle qui nous aiderons à comprendre le contenu d’une application.
-    \subsubsection{Schéma de navigation de l'application}
-        La figure \textbf{\ref{fig:SchNavGlobal}} représente le schéma de navigation global de l'application il nous montre toutes les pages de l'application.
-
-\begin{figure}[H]
-\centering
-\frame{\includegraphics[width=0.9\columnwidth]{img/SchNav_Global.jpg}}
-\caption{Schéma de navigation de l'application}
-\label{fig:SchNavGlobal}
-\end{figure}
-        
-    \subsubsection{Schéma de navigation par acteur}
-    Les figures suivantes représentent les schémas de navigation par acteurs selon la spécification des besoins qu'on l'a réalisé au début de ce chapitre.
-        \begin{itemize}[label=\textbullet]
-
-            \item \textbf{Stagiaire : }
-    
-                 La figure \textbf{\ref{fig:schema de navigationSt}} représente le schéma de navigation du Stagiaire.
-                
-                \begin{figure}[H]
-                \centering
-                \frame{\includegraphics[width=0.9\columnwidth]{img/SchNav_Stagiaire.jpg}}
-                \caption{Schéma de navigation d’un stagiaire}
-                \label{fig:schema de navigationSt}
-                \end{figure}
-
-            \item \textbf{Consultant : }
-            
-                La figure \textbf{\ref{fig:schema de navigationCons}} représente le schéma de navigation du consultant.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\includegraphics[width=0.9\columnwidth]{img/SchNav_Consultant.jpg}}
-                \caption{Schéma de navigation d'un consultant}
-                \label{fig:schema de navigationCons}
-                \end{figure}
-
-            \item \textbf{Employé : }
-                
-                La figure \textbf{\ref{fig:schema de navigationEmp}} représente le schéma de navigation de l'employé.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\includegraphics[width=0.9\columnwidth]{img/SchNav_Employe.jpg}}
-                \caption{Schéma de navigation d’un employé}
-                \label{fig:schema de navigationEmp}
-                \end{figure}
-            
-            \item \textbf{responsable RH :}
-
-                La figure \textbf{\ref{fig:schema de navigationRh}} représente le schéma de navigation du responsable Rh.
-                
-                \begin{figure}[H]
-                \centering
-                \frame{\includegraphics[width=0.9\columnwidth]{img/SchNav_RH.jpg}}
-                \caption{Schéma de navigation d’un responsable RH}
-                \label{fig:schema de navigationRh}
-                \end{figure}
-                
-            \item \textbf{Manager :}
-            
-                La figure \textbf{\ref{fig:schema de navigationMan}} représente le schéma de navigation du manager.
-            
-                \begin{figure}[H]
-                \centering
-                \frame{\includegraphics[width=0.9\columnwidth]{img/ShcNav_Manager.jpg}}
-                \caption{Schéma de navigation d’un manager}
-                \label{fig:schema de navigationMan}
-                \end{figure}
- 
-                            
-            \end{itemize}
-
-\section{Difficultés rencontrées} 
-
-La principales difficulté rencontrée c'est que nous avons préparé la partie Front-end à partir du zéro en se basant sur les maquettes fournies par l'équipe de design de Xtendplex.
-En effet la réalisation de chaque sprint se divise en trois parties partie Back-end, intégration de la maquette en HTML et CSS et la partie Front-end ce qui engendre une perte de temps considérable
-
-
-
-\section{Environnement de travail} 
-
-
-\subsection{Outils de gestion de projet}
+\subsection{Non-functional requirements}
 
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{Bitbucket }
- 
- Bitbucket est un service d'hébergement Web et de gestion du développement logiciel,planification, collaboration autour du code, et intégration. il s'appuie sur le logiciel de gestion de version décentralisée Git.\cite{webArticle4}
-
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/bitbucket.jpg}
-\caption{Logo Bitbucket}
-\label{fig:Bitbucket}
-\end{figure}
-
-
-\item \textbf{Jira Software } 
-
- Jira est une plateforme de gestion de projet destinée au développement logiciel. Elle permet de préparer, matérialiser et suivre les développements des teams SCRUM.\cite{webArticle5}
- 
- la figure \ref{fig:jira} montre une capture de jira qui contient les tâches terminées et les tâches en cours de sprint 1.
-
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/jira.png}
-\caption{Logo Bitbucket}
-\label{fig:jira}
-\end{figure}
- 
-
-
-\item \textbf{Discord } 
-
- Discord permet aux membres de l'équipe de discuter entre eux en tête-à-tête ou en groupe via un serveur. Nous l'utilisons pour envoyer des messages directs, passer des appels vidéo, discuter avec la voix et même partager lécran.\cite{webArticle6}
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/discord-logo.jpg}
-\caption{Logo Discord}
-\label{fig:discord}
-\end{figure}
-
+  \item \textbf{Security}: JWT authentication, role-based access control and token blacklisting for secure session management.
+  \item \textbf{Scalability}: Separation between frontend and API enables horizontal scaling of API servers and static hosting of the frontend.
+  \item \textbf{Performance}: media uploads are handled asynchronously and large files are stored on the server file system (or object storage in production).
+  \item \textbf{Maintainability}: clear modular structure for frontend components and backend Django apps facilitates incremental development and testing.
 \end{itemize}
 
+\section{Architecture overview}
 
-\subsection{Framework de développement et de tests}
-
+The application follows a standard client-server architecture:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{Angular }
-  
- Angular est un framework open source, écrit en JavaScript, qui permet la création d'applications Web, en particulier les «applications à une seule page»: Des applications Web accessibles via une seule page Web, rendant l'expérience utilisateur plus fluide et évitant les pages Chargées chaque nouveau action.\cite{webArticle7}
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/angular-10.png}
-\caption{Logo Angular}
-\label{fig:angular}
-\end{figure}
-
-
-
-  \item\textbf{Spring Boot }
- 
- Spring est un Framework, qui fournit un modèle complet de programmation et de configuration pour les applications d'entreprise modernes basées sur Java, sur tout type de plate-forme de déploiement.\cite{webArticle8}
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/spring-boot-logo.png}
-\caption{Logo springBoot}
-\label{fig:springBoot}
-\end{figure}
-
- \item\textbf{Postman }
- 
-Postman est une solution pour interroger ou tester webservices et API. Il permet de construire et d’exécuter des requêtes HTTP, de les stocker dans un historique afin de pouvoir les rejouer, mais surtout de les organiser en Collections. Nous avons utilisé cet outil pour tester le 
-fonctionnement de la partie Backend.\cite{webArticle9}
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/postman.png}
-\caption{Logo postman}
-\label{fig:postman}
-\end{figure}
-
-
-
+  \item \textbf{Frontend}: React (Vite), using libraries such as Axios for API requests, CKEditor for rich text fields, Bootstrap for layout and Zustand for lightweight state management.
+  \item \textbf{Backend API}: Django 4.2 and Django REST Framework exposing JSON endpoints secured with Simple JWT. The backend includes app modules for authentication, core course models, user profiles and API logic.
+  \item \textbf{Payments}: Stripe and PayPal integrations handled server-side; the backend exposes endpoints for checkout, payment success webhooks and coupon application.
+  \item \textbf{Storage}: Development uses SQLite (db.sqlite3) and the local media folder for uploaded content; production deployments should move to a relational database (Postgres) and object storage for media.
 \end{itemize}
 
+\section{API highlights}
 
-
-\subsection{Système de gestion de base de données}
-
+The backend exposes REST endpoints to manage authentication, courses and orders. Representative endpoints include:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-  \item\textbf{MySQL Database }
-  
-MySql est un système de gestion de bases de données relationnelles (SGBDR). Ce système est distribué sous une double licence GPL(licence publique générale) et propriétaire. Il est parmi les  logiciels de gestion de base de données les plus utilisés au monde.\cite{webArticle10}
- 
- \begin{figure}[H]
-\centering
-\includegraphics[width=0.3\columnwidth]{img/Mysql.png}
-\caption{Logo MySql}
-\label{fig:MySql}
-\end{figure}
- 
+  \item `user/token/`, `user/token/refresh/`, `user/register/` — authentication and user management.
+  \item `course/course-list/`, `course/course-detail/<slug>/`, `course/search/` — course discovery.
+  \item `course/cart/`, `order/create-order/`, `payment/stripe-checkout/<order_oid>/` — cart and payment flows.
+  \item `student/course-detail/<user_id>/<enrollment_id>/` and `teacher/course-create/` — student and teacher specific resources.
 \end{itemize}
 
+\section{Planning and releases}
 
-
-
-\section*{Conclusion}
-La phase de spécification des besoins est une phase très importante dans le cycle de vie d’un projet, car elle offre une vue plus claire du système et des principales caractéristiques à atteindre. Par conséquent, nous avons introduit le backlog produit et la planification des releases pour passer à la phase de conception.
-
-
-
-
-
-
+The project followed an iterative approach with three releases (each including two sprints) delivering the features described in later chapters.
 

@@ -1,40 +1,26 @@
-\chapter*{Introduction générale}
-\addcontentsline{toc}{chapter}{Introduction générale} % to include the introduction to the table of content
-\markboth{Introduction générale}{} %To redefine the section page head
+﻿\chapter*{Introduction generale}
+\addcontentsline{toc}{chapter}{Introduction generale} % to include the introduction to the table of content
+\markboth{Introduction generale}{} %To redefine the section page head
 
-L’essor de l’informatique et des technologies numériques a profondément bouleversé nos sociétés et, transcende l’ensemble des activités humaines. 
-De nos jours, la majorité de ces activités a été simplifiée et automatisée grâce à l’informatique. 
-Ce phénomène, parfois qualifié de « révolution numérique », permet aujourd’hui le traitement et l’échange d’informations entre les individus, grâce à des logiciels et des réseaux informatiques.
+This report documents the design and implementation of a Learning Management System (LMS) developed during the internship period. The LMS provides a web-based platform for creating, publishing and selling online courses, managing users (instructors and students), handling enrollments, and processing payments.
 
-Ainsi, les entreprises du monde entier utilisent aujourd’hui des logiciels de gestion, leur permettant d’effectuer des tâches complexes rapidement. 
+The implementation is divided into a React-based frontend (built with Vite) and a Django REST Framework backend. The application implements authentication using JWT, course and curriculum management, a shopping cart and checkout flow with Stripe and PayPal integrations, content upload (including video support), discussion threads, reviews, wishlist, and an administrative dashboard used by platform operators.
 
-C’est dans ce contexte que le projet « Xhrm » a vu le jour. Ce projet propose une solution de gestion des ressources humaines, utilisable en tout lieu. 
-Le projet « Xhrm » consiste en une application, permettant de mettre à disposition des clients (les entreprises) un outil de gestion de leurs ressources humaines (RH), présentant des fonctionnalités diverses et utiles en toutes circonstances. 
-
-L’objectif de cette application est, d’une part, de simplifier et d’accélérer le processus RH, et d’autre part, d’améliorer la communication entre les employés (la communication au sein d’une même entreprise) en la rendant plus fluide et flexible. 
-
-L’entreprise de services informatiques XtendPlex, a à cœur ces valeurs d’agilité et d’amélioration des processus RH, et a donc accepté d’allouer toute la logistique nécessaire à la réalisation de ce projet.
-
-
-Le présent rapport sera organisé de la manière suivante :
-
+The internship was supervised by Aicha ben Jrad and carried out as part of the curriculum of Tek-Up University. The main objectives were:
 \begin{itemize}[label=\textbullet,font=\normalsize]
-
-\item Dans un premier chapitre, nous présenterons le cadre du projet.Il sera constitué d’une présentation du contexte général ainsi que d’une étude de l’existant, réalisée à partir de trois projets similaires. Ce premier chapitre contiendra aussi une présentation de la méthode de gestion de projet et de la méthode de conception que nous avons choisi d’adopter. 
-
-\item Le second chapitre présentera une analyse et une spécification des besoins, fonctionnels et non fonctionnels, réalisés à partir de l’identification des acteurs de l’application. Il exposera aussi le diagramme de cas d’utilisation globale, ainsi que le diagramme de classes de l’application, la répartition des releases et l’architecture de l’application. 
-
-
-\item Le troisième chapitre portera sur la Release 1 : « Gestion de l’entreprise et des comptes », qui a consisté en la réalisation d’un Sprint 1 portant sur la création du compte de l’entreprise, compte du Manager et la gestion des postes et des départements, ainsi que la réalisation d’un Sprint 2, portant sur la gestion des utilisateurs, l’authentification et la gestion des rôles.
-    
-\item Dans un quatrième chapitre, nous présenterons la Release 2, « Gestion d’activité de ressources humaines », qui comprend le Sprint 3, portant sur la gestion des demandes de congé et des demandes d’autorisation de sortie, et le Sprint 4, portant sur la gestion de présence, le pointage et le compte-rendu d’activité.
-
-
-\item Enfin, dans un cinquième et dernier chapitre, nous présenterons la Release 3, « Gestion d’achat et de dépenses », comprenant le Sprint 5, portant sur la gestion des demandes d’achats, la gestion des fournisseurs et la gestion des dépenses périodiques, ainsi que le Sprint 6, portant sur la réalisation d'un Dashboard de suivi des dépenses et de la présence.
-
+  \item Implement a full-stack LMS with clear separation between frontend and API backend.
+  \item Provide secure user authentication (students and teachers) and role-based features.
+  \item Support course creation, curriculum management, video uploads and course consumption.
+  \item Implement a shopping and payment flow with coupons and order tracking.
+  \item Deliver an admin interface for content moderation and operational tasks.
 \end{itemize}
 
-
-
-
+The report is organised as follows:
+\begin{itemize}[label=\textbullet,font=\normalsize]
+  \item Chapter 1: Project context and motivation, study of similar systems, and the overall project methodology.
+  \item Chapter 2: Requirements analysis and specification (actors, functional and non-functional requirements, system architecture and planning).
+  \item Chapter 3: Release 1 — user and account management, authentication and basic course model implementation.
+  \item Chapter 4: Release 2 — course consumption features: curriculum, lectures, student activity and interaction (Q&A, reviews), and course purchasing flows.
+  \item Chapter 5: Release 3 — payments, orders, teacher features (course creation and management), and the administrative dashboard.
+\end{itemize}
 
