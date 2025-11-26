@@ -1,54 +1,54 @@
-\chapter{Release 2: Gestion d'activité de ressources humaines}
+﻿\chapter{Release 2: Gestion d'activitÃ© de ressources humaines}
 
 
 
 % Une section
 
-% Exemple d'une section qui porte une référence à une bibliographie
-% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas où il y a une référence dans la table des matières.
+% Exemple d'une section qui porte une rÃ©fÃ©rence Ã  une bibliographie
+% NB: il faut bien suivre le syntaxe pour ne pas tomber dans le cas oÃ¹ il y a une rÃ©fÃ©rence dans la table des matiÃ¨res.
 
 \section*{Introduction}
-Dans ce chapitre, nous allons présenter les différentes étapes de réalisation du troisième sprint "Gestion des Congés et des permission des sorties", et du quatrième sprint "Gestion de présence et du compte rendu d'activité". 
+Dans ce chapitre, nous allons prÃ©senter les diffÃ©rentes Ã©tapes de rÃ©alisation du troisiÃ¨me sprint "Gestion des CongÃ©s et des permission des sorties", et du quatriÃ¨me sprint "Gestion de prÃ©sence et du compte rendu d'activitÃ©". 
 
-\section{sprint 3:Module gestion des Congés et des permission des sorties} 
+\section{sprint 3:Module gestion des CongÃ©s et des permission des sorties} 
 
-Dans cette section nous allons présenter les différents étapes de la réalisation du sprint "Gestion des Congés et des permission des sorties".
+Dans cette section nous allons prÃ©senter les diffÃ©rents Ã©tapes de la rÃ©alisation du sprint "Gestion des CongÃ©s et des permission des sorties".
     \subsection{Objectifs du sprint 3}
     
-        L’objectif du troisième sprint est de développer le module « Gestion des congés et permission de sorties » qui permet en premier lieu aux utilisateurs de gérer leurs demandes de sorties et en deuxième lieu aux employés de gérer leurs demandes de congés et qui permet au responsable RH de gérer toutes ces demandes.
+        Lâ€™objectif du troisiÃ¨me sprint est de dÃ©velopper le module Â« Gestion des congÃ©s et permission de sorties Â» qui permet en premier lieu aux utilisateurs de gÃ©rer leurs demandes de sorties et en deuxiÃ¨me lieu aux employÃ©s de gÃ©rer leurs demandes de congÃ©s et qui permet au responsable RH de gÃ©rer toutes ces demandes.
 
     \subsection{Backlog du sprint 3}
     
             \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
                 
                 \hline 
-                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                    \textbf{Id} & \textbf{FonctionnalitÃ©s}& \textbf{PrioritÃ©}& \textbf{Estimation\newline (Jour)}\\
                 \hline
                 \endhead
                  \endfoot
                   \endlastfoot
                 \hline  
                     1 
-                    & En tant qu'employé je veux passer une demande de congé
+                    & En tant qu'employÃ© je veux passer une demande de congÃ©
                     & 1
                     & 1\\
             
                 \hline
                     2
-                    & En tant qu'employé je veux consulter l'état de ma demande de congé
+                    & En tant qu'employÃ© je veux consulter l'Ã©tat de ma demande de congÃ©
                     & 2
                     & 1\\
             
                     
                 \hline
                     3
-                    & En tant qu'employé je veux consulter l'historique de mes demandes de congés
+                    & En tant qu'employÃ© je veux consulter l'historique de mes demandes de congÃ©s
                     & 3
                     & 1\\
                     
                 \hline
                     4
-                    & En tant qu'employé je veux consulter mes congés
+                    & En tant qu'employÃ© je veux consulter mes congÃ©s
                     & 4
                     & 1\\
                     
@@ -60,14 +60,14 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
             
                 \hline
                     6
-                    & En tant qu'utilisateur je veux consulter l'état de ma demande de sortie
+                    & En tant qu'utilisateur je veux consulter l'Ã©tat de ma demande de sortie
                     & 6
                     & 1\\
 
                     
                 \hline
                     7
-                    & En tant qu'employé je veux consulter l'historique de mes demandes d'autorisations de sortie
+                    & En tant qu'employÃ© je veux consulter l'historique de mes demandes d'autorisations de sortie
                     & 7
                     & 1\\
                 
@@ -99,7 +99,7 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
 
                 \hline
                     12
-                    & En tant que responsable RH je veux consulter l'historique des congés prises par chaque utilisateur
+                    & En tant que responsable RH je veux consulter l'historique des congÃ©s prises par chaque utilisateur
                     & 11
                     & 3\\
                     
@@ -111,187 +111,187 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
 
             \end{longtable}
             
-    \subsection{Spécification des besoins fonctionnels}
+    \subsection{SpÃ©cification des besoins fonctionnels}
     
-    La figure \ref{fig:UCsp3} représente le diagramme de cas d'utilisation du sprint "Gestion de congé et autorisation" 
+    La figure \ref{fig:UCsp3} reprÃ©sente le diagramme de cas d'utilisation du sprint "Gestion de congÃ© et autorisation" 
 
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\columnwidth]{img/UCGestionCongé&Sortie.png}
-        \caption{Diagramme de cas d'utilisation "Gestion de congé et autorisation"}
+        \\includegraphics[width=0.9\columnwidth]{}
+        \caption{Diagramme de cas d'utilisation "Gestion de congÃ© et autorisation"}
         \label{fig:UCsp3}
         \end{figure}
     
     \subsection{Diagramme de classe}
     
-    La figure \ref{fig:CDsp3} représente le diagramme de classe du sprint "Gestion de congé et autorisation". 
+    La figure \ref{fig:CDsp3} reprÃ©sente le diagramme de classe du sprint "Gestion de congÃ© et autorisation". 
     
     \begin{itemize}
-         \item Un utilisateur peut avoir plusieurs congés. Un congé est caractérisé par (id congé, nombre de jours, date début, raison).
+         \item Un utilisateur peut avoir plusieurs congÃ©s. Un congÃ© est caractÃ©risÃ© par (id congÃ©, nombre de jours, date dÃ©but, raison).
 
-        \item Un utilisateur peut avoir plusieurs autorisations de sortie. Une autorisation est caractérisée par (id autorisation, nombre d’heures, date, heure de sortie). 
+        \item Un utilisateur peut avoir plusieurs autorisations de sortie. Une autorisation est caractÃ©risÃ©e par (id autorisation, nombre dâ€™heures, date, heure de sortie). 
         \end{itemize}
     
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionCongé.PNG}}
-        \caption{Diagramme de classe "Gestion de congé et autorisation}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Diagramme de classe "Gestion de congÃ© et autorisation}
         \label{fig:CDsp3}
         \end{figure}   
     
     \subsection{Diagrammes dynamiques}
     
-    Dans cette partie nous allons présenter un diagramme séquence système pour la procédure de traitement d'une demande de congé et un diagramme état transition pour montrer les différents état qu'une demande peut l'avoir.
+    Dans cette partie nous allons prÃ©senter un diagramme sÃ©quence systÃ¨me pour la procÃ©dure de traitement d'une demande de congÃ© et un diagramme Ã©tat transition pour montrer les diffÃ©rents Ã©tat qu'une demande peut l'avoir.
     
-        \subsubsection{Diagramme de séquence système "Traiter une demande de congé"}
+        \subsubsection{Diagramme de sÃ©quence systÃ¨me "Traiter une demande de congÃ©"}
         
-        La figure \ref{fig:SSsp3} représente le diagramme de séquence système de la procédure de traitement d'une demande de congé entre les deux acteurs Employé et Responsable RH avec le système.
+        La figure \ref{fig:SSsp3} reprÃ©sente le diagramme de sÃ©quence systÃ¨me de la procÃ©dure de traitement d'une demande de congÃ© entre les deux acteurs EmployÃ© et Responsable RH avec le systÃ¨me.
         
-        Ce diagramme nous montre les différents interactions entre les deux acteurs Employé et Responsable Rh avec le système afin de décrire toute la procédure du demande de congé.
+        Ce diagramme nous montre les diffÃ©rents interactions entre les deux acteurs EmployÃ© et Responsable Rh avec le systÃ¨me afin de dÃ©crire toute la procÃ©dure du demande de congÃ©.
         
             \begin{figure}[H]
             \centering
-            \frame{\includegraphics[width=0.9\columnwidth]{img/SStimeOff.png}}
-            \caption{Diagramme de séquence système "Traiter une demande de congé"}
+            \frame{\\includegraphics[width=0.9\columnwidth]{}}
+            \caption{Diagramme de sÃ©quence systÃ¨me "Traiter une demande de congÃ©"}
             \label{fig:SSsp3}
             \end{figure} 
             
-        \subsubsection{Diagramme d'état transition "État d'une demande"}
+        \subsubsection{Diagramme d'Ã©tat transition "Ã‰tat d'une demande"}
         
-        La figure \ref{fig:STsp3} représente le diagramme d'état transition d'une demande.
-        La demande peut avoir quatre état comme nous montre le diagramme suivant.
+        La figure \ref{fig:STsp3} reprÃ©sente le diagramme d'Ã©tat transition d'une demande.
+        La demande peut avoir quatre Ã©tat comme nous montre le diagramme suivant.
         
         
             \begin{figure}[H]
             \centering
-            \frame{\includegraphics[width=0.9\columnwidth]{img/EtatTransitionAchat.png}}
-            \caption{Diagramme d'état transition "État d'une demande"}
+            \frame{\\includegraphics[width=0.9\columnwidth]{}}
+            \caption{Diagramme d'Ã©tat transition "Ã‰tat d'une demande"}
             \label{fig:STsp3}
             \end{figure} 
     
-    \subsection{Réalisation}
+    \subsection{RÃ©alisation}
     
-    Avant de commencer la partie réalisation de ce sprint on doit se rappeler des comptes déjà crées pour l'entreprise XtendPlex de monsieur "Mohamed ".
-    Jusqu'à maintenant on a le compte "Mohamed " avec le rôle Manager et le compte de "Ali"  qui possède maintenant le rôle Responsable RH.
-    Il faut noter que nous avons ajouté deux autres utilisateurs, "Mourad " avec le rôle Employé et "Maissa" avec le rôle Stagiaire.
+    Avant de commencer la partie rÃ©alisation de ce sprint on doit se rappeler des comptes dÃ©jÃ  crÃ©es pour l'entreprise Tek-Up de monsieur "Mohamed ".
+    Jusqu'Ã  maintenant on a le compte "Mohamed " avec le rÃ´le Manager et le compte de "Ali"  qui possÃ¨de maintenant le rÃ´le Responsable RH.
+    Il faut noter que nous avons ajoutÃ© deux autres utilisateurs, "Mourad " avec le rÃ´le EmployÃ© et "Maissa" avec le rÃ´le Stagiaire.
     
-    Ces quatre comptes vont nous accompagner pour le reste du rapport alors si l'on récapitule on a:
+    Ces quatre comptes vont nous accompagner pour le reste du rapport alors si l'on rÃ©capitule on a:
         \begin{itemize}
-        \item Compte "Mohamed " avec le rôle \textbf{Manager}
-        \item Compte "Ali"  avec le rôle \textbf{Responsable Rh}
-        \item Compte Mourad avec le rôle \textbf{Employé}
-        \item Compte "Maissa" avec le rôle \textbf{Stagiaire}
+        \item Compte "Mohamed " avec le rÃ´le \textbf{Manager}
+        \item Compte "Ali"  avec le rÃ´le \textbf{Responsable Rh}
+        \item Compte Mourad avec le rÃ´le \textbf{EmployÃ©}
+        \item Compte "Maissa" avec le rÃ´le \textbf{Stagiaire}
         \end{itemize}   
         
-    La figure \ref{fig:cap1sp3} représente l'interface d'autorisation.
-    On est maintenant connecté avec le compte de Mourad et puisqu'il possède le rôle Employé ,on peut remarquer qu'il y a deux onglets qui sont affichés, la première est pour la section congé et la deuxième est pour les autorisations de sortie.
+    La figure \ref{fig:cap1sp3} reprÃ©sente l'interface d'autorisation.
+    On est maintenant connectÃ© avec le compte de Mourad et puisqu'il possÃ¨de le rÃ´le EmployÃ© ,on peut remarquer qu'il y a deux onglets qui sont affichÃ©s, la premiÃ¨re est pour la section congÃ© et la deuxiÃ¨me est pour les autorisations de sortie.
     
     
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture1.PNG}}
-        \caption{interface demande de congé}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{interface demande de congÃ©}
         \label{fig:cap1sp3}
         \end{figure} 
         
-    La figure \ref{fig:cap2sp3} représente le formulaire de demande de congé.
+    La figure \ref{fig:cap2sp3} reprÃ©sente le formulaire de demande de congÃ©.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture2.PNG}}
-        \caption{formulaire de demande de congé}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{formulaire de demande de congÃ©}
         \label{fig:cap2sp3}
         \end{figure} 
     
-    La figure \ref{fig:cap3sp3} nous montre que la demande de congé passée par Mourad est enregistrée avec succès.
+    La figure \ref{fig:cap3sp3} nous montre que la demande de congÃ© passÃ©e par Mourad est enregistrÃ©e avec succÃ¨s.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture3.PNG}}
-        \caption{demande de congé ajoutée}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{demande de congÃ© ajoutÃ©e}
         \label{fig:cap3sp3}
         \end{figure} 
         
-    La figure \ref{fig:cap4sp3} représente l'interface des autorisations de sortie.
+    La figure \ref{fig:cap4sp3} reprÃ©sente l'interface des autorisations de sortie.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture4.PNG}}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
         \caption{interface demande d'autorisation de sortie}
         \label{fig:cap4sp3}
         \end{figure} 
         
-    La figure \ref{fig:cap5sp3} représente le formulaire de demande d'une autorisation de sortie.
-    Après avoir demander un congé avec une durée de trois jours monsieur Mourad a passé aussi une demande d'autorisation de sortie pour une durée de deux heures pour le 28 juin.
+    La figure \ref{fig:cap5sp3} reprÃ©sente le formulaire de demande d'une autorisation de sortie.
+    AprÃ¨s avoir demander un congÃ© avec une durÃ©e de trois jours monsieur Mourad a passÃ© aussi une demande d'autorisation de sortie pour une durÃ©e de deux heures pour le 28 juin.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture5.PNG}}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
         \caption{formulaire demande d'autorisation de sortie}
         \label{fig:cap5sp3}
         \end{figure} 
         
-    Maintenant nous changeons du compte et nous allons connecter avec le compte de "Ali"  qui possède le rôle responsable RH comme vous pouvez voir dans la navbar.
-    En regardant la figure \ref{fig:cap7sp3} on constate rapidement qu'il y a deux onglets de plus sont ajoutés à la section Autorisation qui sont "Approbation en attente" et "vue global".
+    Maintenant nous changeons du compte et nous allons connecter avec le compte de "Ali"  qui possÃ¨de le rÃ´le responsable RH comme vous pouvez voir dans la navbar.
+    En regardant la figure \ref{fig:cap7sp3} on constate rapidement qu'il y a deux onglets de plus sont ajoutÃ©s Ã  la section Autorisation qui sont "Approbation en attente" et "vue global".
     Dans cette figure nous sommes dans l'onglet "Approbation en attente" dont on y trouve les deux demandes de monsieur Mourad.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture7.PNG}}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
         \caption{interface approbation en attente }
         \label{fig:cap7sp3}
         \end{figure} 
         
-    Dans la figure \ref{fig:cap8sp3} Monsieur "Ali"  le responsable Rh a accepté la demande de sortie et il va aussi accepter la demande de congé.
+    Dans la figure \ref{fig:cap8sp3} Monsieur "Ali"  le responsable Rh a acceptÃ© la demande de sortie et il va aussi accepter la demande de congÃ©.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture8.PNG}}
-        \caption{la demande est acceptée }
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{la demande est acceptÃ©e }
         \label{fig:cap8sp3}
         \end{figure} 
         
-    Maintenant en naviguant à l'onglet "Vue global" comme nous illustre la figure \ref{fig:cap9sp3} on trouve la liste de tous les utilisateurs avec pour chacun le nombre de jours de congé restants et si vous vous rappelez bien dans le premier sprint dans la figure \ref{fig:cap7sp1} nous avons montré que le manager a fixé le nombre de jours de congé à 20.
-    Tous les utilisateurs possèdent leurs 20 jours hormis Mourad qui a pris 3 jours et on trouve aussi le détail de son congé.
+    Maintenant en naviguant Ã  l'onglet "Vue global" comme nous illustre la figure \ref{fig:cap9sp3} on trouve la liste de tous les utilisateurs avec pour chacun le nombre de jours de congÃ© restants et si vous vous rappelez bien dans le premier sprint dans la figure \ref{fig:cap7sp1} nous avons montrÃ© que le manager a fixÃ© le nombre de jours de congÃ© Ã  20.
+    Tous les utilisateurs possÃ¨dent leurs 20 jours hormis Mourad qui a pris 3 jours et on trouve aussi le dÃ©tail de son congÃ©.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture9.PNG}}
-        \caption{interface vue global des congés par utilisateur}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{interface vue global des congÃ©s par utilisateur}
         \label{fig:cap9sp3}
         \end{figure} 
         
-    On reconnecte maintenant avec le compte de Mourad pour trouver que sa demande a été acceptée.
+    On reconnecte maintenant avec le compte de Mourad pour trouver que sa demande a Ã©tÃ© acceptÃ©e.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp3Capture10.PNG}}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
         \caption{historique des demandes de sortie}
         \label{fig:cap10sp3}
         \end{figure} 
     
     
     
-\section{Sprint 4:Module gestion de présence et Compte rendu d'activité } 
-Dans cette section nous allons présenter les différents étapes de la réalisation du sprint "Gestion de présence et Compte rendu d'activité".
+\section{Sprint 4:Module gestion de prÃ©sence et Compte rendu d'activitÃ© } 
+Dans cette section nous allons prÃ©senter les diffÃ©rents Ã©tapes de la rÃ©alisation du sprint "Gestion de prÃ©sence et Compte rendu d'activitÃ©".
     \subsection{Objectifs du sprint 4}
     
-        L’objectif du quatrième sprint est de développer le module « Gestion de présence et Compte rendu d'activité » qui permet aux utilisateurs de faire le pointage et de consulter leurs listes de présence.
-        De plus, permettant au manager et aux responsables RH de consulter les listes de présences de tous les employés de l'entreprise.
+        Lâ€™objectif du quatriÃ¨me sprint est de dÃ©velopper le module Â« Gestion de prÃ©sence et Compte rendu d'activitÃ© Â» qui permet aux utilisateurs de faire le pointage et de consulter leurs listes de prÃ©sence.
+        De plus, permettant au manager et aux responsables RH de consulter les listes de prÃ©sences de tous les employÃ©s de l'entreprise.
 
     \subsection{Backlog du sprint 4}
     
             \begin{longtable}{|m{1cm}|m{8cm}|m{2cm}|m{2cm}|}
                 
                 \hline 
-                    \textbf{Id} & \textbf{Fonctionnalités}& \textbf{Priorité}& \textbf{Estimation\newline (Jour)}\\
+                    \textbf{Id} & \textbf{FonctionnalitÃ©s}& \textbf{PrioritÃ©}& \textbf{Estimation\newline (Jour)}\\
                 \hline
                 \endhead
                  \endfoot
                   \endlastfoot
                 \hline  
                     1 
-                    & En tant qu'utilisateur je veux marquer l'heure d'entrée afin de marquer ma présence
+                    & En tant qu'utilisateur je veux marquer l'heure d'entrÃ©e afin de marquer ma prÃ©sence
                     & 1
                     & 1\\
             
@@ -303,14 +303,14 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
             
                 \hline
                     3
-                    & En tant qu'utilisateur je veux consulter ma liste de présence
+                    & En tant qu'utilisateur je veux consulter ma liste de prÃ©sence
                     & 3
                     & 1\\
                     
                     
                 \hline
                     4
-                    & En tant que consultant je veux consulter mon compte rendu d'activité par mois afin d'avoir un rapport sur mon activité de chaque jour de ce mois
+                    & En tant que consultant je veux consulter mon compte rendu d'activitÃ© par mois afin d'avoir un rapport sur mon activitÃ© de chaque jour de ce mois
                     & 4
                     & 5\\
                 
@@ -322,7 +322,7 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
             
                 \hline
                     6
-                    & En tant que responsable RH je veux consulter la liste des présences
+                    & En tant que responsable RH je veux consulter la liste des prÃ©sences
                     & 6
                     & 1\\
                     
@@ -341,106 +341,107 @@ Dans cette section nous allons présenter les différents étapes de la réalisa
 
             \end{longtable}
 
-    \subsection{Spécification des besoins fonctionnels}
+    \subsection{SpÃ©cification des besoins fonctionnels}
     
-        La figure \ref{fig:UCsp4} représente le diagramme cas d'utilisation du sprint "Gestion de présence et compte rendu d'activité".
+        La figure \ref{fig:UCsp4} reprÃ©sente le diagramme cas d'utilisation du sprint "Gestion de prÃ©sence et compte rendu d'activitÃ©".
     
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\columnwidth]{img/UCPointage&Presence.png}
-        \caption{Diagramme de cas d'utilisation "Gestion de présence et compte rendu d'activité"}
+        \\includegraphics[width=0.9\columnwidth]{}
+        \caption{Diagramme de cas d'utilisation "Gestion de prÃ©sence et compte rendu d'activitÃ©"}
         \label{fig:UCsp4}
         \end{figure}    
     
     \subsection{Diagramme de classe}
     
-        La figure \ref{fig:CDsp4} représente le diagramme de classe du sprint "Gestion de présence et compte rendu d'activité".
+        La figure \ref{fig:CDsp4} reprÃ©sente le diagramme de classe du sprint "Gestion de prÃ©sence et compte rendu d'activitÃ©".
         
         \begin{itemize}
-            \item Un utilisateur doit avoir une liste de pointage. Une liste de pointage est caractérisée par (id pointage, heure d’entrée, heure de sortie, date).
+            \item Un utilisateur doit avoir une liste de pointage. Une liste de pointage est caractÃ©risÃ©e par (id pointage, heure dâ€™entrÃ©e, heure de sortie, date).
         \end{itemize}
         
     
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/CDGestionPrésence.PNG}}
-        \caption{Diagramme de classe "Gestion de présence"}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Diagramme de classe "Gestion de prÃ©sence"}
         \label{fig:CDsp4}
         \end{figure}   
     
     \subsection{Diagrammes dynamiques}
     
-        \subsubsection{Diagramme de séquence objet "marquer l'heure d'entrée"}
+        \subsubsection{Diagramme de sÃ©quence objet "marquer l'heure d'entrÃ©e"}
         
-            La figure \ref{fig:SSsp3} représente le diagramme de séquence objet du cas d'utilisation "marquer l'heure d'entrée".
+            La figure \ref{fig:SSsp3} reprÃ©sente le diagramme de sÃ©quence objet du cas d'utilisation "marquer l'heure d'entrÃ©e".
             
-            Ce diagramme représente les différents interactions de l'acteur avec les composants du projet afin de marquer son présence.
+            Ce diagramme reprÃ©sente les diffÃ©rents interactions de l'acteur avec les composants du projet afin de marquer son prÃ©sence.
             
             
         
             \begin{figure}[H]
             \centering
-            \frame{\includegraphics[width=0.9\columnwidth]{img/SOpresence.png}}
-            \caption{Diagramme de séquence objet "marquer l'heure d'entrée"}
+            \frame{\\includegraphics[width=0.9\columnwidth]{}}
+            \caption{Diagramme de sÃ©quence objet "marquer l'heure d'entrÃ©e"}
             \label{fig:SSsp3}
             \end{figure} 
     
     
-    \subsection{Réalisation}
+    \subsection{RÃ©alisation}
     
-    Pour la réalisation du quatrième sprint nous allons nous connecter avec le compte de "Maissa" qui possède le rôle Stagiaire. Ce qu'on remarque en premier lieu c'est que notre sidebar manque deux éléments puisqu'un utilisateur avec le rôle stagiaire ne peut pas faire ni des achats ni de consulter son compte rendu d'activité.
-    La figure \ref{fig:cap1sp4} représente la page présence et plus précisément l'onglet pointage.
+    Pour la rÃ©alisation du quatriÃ¨me sprint nous allons nous connecter avec le compte de "Maissa" qui possÃ¨de le rÃ´le Stagiaire. Ce qu'on remarque en premier lieu c'est que notre sidebar manque deux Ã©lÃ©ments puisqu'un utilisateur avec le rÃ´le stagiaire ne peut pas faire ni des achats ni de consulter son compte rendu d'activitÃ©.
+    La figure \ref{fig:cap1sp4} reprÃ©sente la page prÃ©sence et plus prÃ©cisÃ©ment l'onglet pointage.
     
 
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture1.PNG}}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
         \caption{interface du pointage}
         \label{fig:cap1sp4}
         \end{figure} 
     
-    La figure \ref{fig:cap2sp4} nous montre que "Maissa" a marqué son présence. 
-    On note aussi que Mourad a marqué son présence pour aujourd'hui.
+    La figure \ref{fig:cap2sp4} nous montre que "Maissa" a marquÃ© son prÃ©sence. 
+    On note aussi que Mourad a marquÃ© son prÃ©sence pour aujourd'hui.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture2.PNG}}
-        \caption{Liste du présence après le ClockIN}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Liste du prÃ©sence aprÃ¨s le ClockIN}
         \label{fig:cap2sp4}
         \end{figure} 
         
-    En connectant avec le compte de "Ali"  le Responsable Rh on remarque qu'un autre onglet apparaît dans la page présence.
-    La figure \ref{fig:cap3sp4} représente l'onglet présence dont on y trouve la liste des utilisateurs présents.
+    En connectant avec le compte de "Ali"  le Responsable Rh on remarque qu'un autre onglet apparaÃ®t dans la page prÃ©sence.
+    La figure \ref{fig:cap3sp4} reprÃ©sente l'onglet prÃ©sence dont on y trouve la liste des utilisateurs prÃ©sents.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture3.PNG}}
-        \caption{Interface du présence}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Interface du prÃ©sence}
         \label{fig:cap3sp4}
         \end{figure} 
     
-    Maintenant on va visiter une nouvelle page dans notre application, et comme nous montre la figure \ref{fig:cap5sp4} c'est l'interface du compte rendu d'activité. 
-    En fait le compte rendu d'activité contient l'activité de l'utilisateur jour par jour et il est représenté par un calendrier sur une période que l'utilisateur peut la choisie (mois, semaine ou jour).
+    Maintenant on va visiter une nouvelle page dans notre application, et comme nous montre la figure \ref{fig:cap5sp4} c'est l'interface du compte rendu d'activitÃ©. 
+    En fait le compte rendu d'activitÃ© contient l'activitÃ© de l'utilisateur jour par jour et il est reprÃ©sentÃ© par un calendrier sur une pÃ©riode que l'utilisateur peut la choisie (mois, semaine ou jour).
     
-    Ici on a le compte rendu d'activité de "Ali"  il a joint l'entreprise le 22 juin il n'a aucun absence ni des congés ou des permissions de sortie.
+    Ici on a le compte rendu d'activitÃ© de "Ali"  il a joint l'entreprise le 22 juin il n'a aucun absence ni des congÃ©s ou des permissions de sortie.
     
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture5 cra_ali.PNG}}
-        \caption{Compte rendu d'activité du Responsabe RH 'Ali'}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Compte rendu d'activitÃ© du Responsabe RH 'Ali'}
         \label{fig:cap5sp4}
         \end{figure} 
         
-    Dans la figure \ref{fig:cap6sp4} on trouve le compte rendu de Mourad on doit se rappeler d'abord que dans la réalisation du sprint précédent Mourad a pris un congé d'une période de 3 jours et aussi une permission de sortie pour le 28 juin.
+    Dans la figure \ref{fig:cap6sp4} on trouve le compte rendu de Mourad on doit se rappeler d'abord que dans la rÃ©alisation du sprint prÃ©cÃ©dent Mourad a pris un congÃ© d'une pÃ©riode de 3 jours et aussi une permission de sortie pour le 28 juin.
         
         \begin{figure}[H]
         \centering
-        \frame{\includegraphics[width=0.9\columnwidth]{img/Sp4Capture6 cra_mourad.png}}
-        \caption{Compte rendu d'activité de l'employé 'Mourad'}
+        \frame{\\includegraphics[width=0.9\columnwidth]{}}
+        \caption{Compte rendu d'activitÃ© de l'employÃ© 'Mourad'}
         \label{fig:cap6sp4}
         \end{figure} 
         
 
 \section*{Conclusion}
-Au cours de ce chapitre, nous avons présenté la réalisation de la deuxième Release "Gestion d'activité de ressources humaines". Pour ce faire, nous avons passé par l’analyse, la conception et la réalisation des deux sprints "Gestion des Congés et des permission des sorties" et "Gestion de présence et du compte rendu d'activité".
+Au cours de ce chapitre, nous avons prÃ©sentÃ© la rÃ©alisation de la deuxiÃ¨me Release "Gestion d'activitÃ© de ressources humaines". Pour ce faire, nous avons passÃ© par lâ€™analyse, la conception et la rÃ©alisation des deux sprints "Gestion des CongÃ©s et des permission des sorties" et "Gestion de prÃ©sence et du compte rendu d'activitÃ©".
+
